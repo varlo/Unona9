@@ -1,0 +1,38 @@
+@import "../../Images/mixins.less";
+
+body {
+  background-color: #fff5cc;
+}
+.inputs_radius(0);
+.thumbnail,
+.img-thumbnail,
+.well,
+.btn,
+.panel-group .panel,
+.btn-group > .btn:first-child,
+.btn-group > .btn:last-child {
+  .radius(0);
+}
+.brand(#666); /* must be the same color as .navbar-default .navbar-nav > li a */
+.btn-default {
+  color: #333;
+  background-color: #fdfdfd;
+  border-color: #ccc;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.03));
+}
+.default_hover(#ebebeb, #adadad, auto); /* background-color, border-color, color */
+.btn-primary {
+  color: #fff;
+  background-color: #ff9351;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.primary_hover(#ef7b44, rgba(0, 0, 0, 0.1), auto); /* background-color, border-color, color */
+.btn-secondary {
+  color: #fff;
+  background-color: #c0dd74;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.secondary_hover(#b5d16c, rgba(0, 0, 0, 0.1), #fff); /* background-color, border-color, color */
+.a_thumbnail(rgba(122, 144, 15, 0.4), rgba(0, 0, 0, 0.1), auto, auto); /* a border-color, a:hover border-color, a color, a:hover color */
+.form-control_focus(rgba(187, 214, 42, 0.7), rgba(187, 214, 42, 0.1)); /* border-color, box-shadow color */
+

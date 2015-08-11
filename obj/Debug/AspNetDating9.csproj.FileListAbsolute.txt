@@ -1,0 +1,6 @@
+c:\Work\Unona\AspNetDating9\bin\AspNetDating.dll.config
+c:\Work\Unona\AspNetDating9\bin\AspNetDating.dll
+c:\Work\Unona\AspNetDating9\bin\AspNetDating.pdb
+c:\Work\Unona\AspNetDating9\obj\Debug\AspNetDating9.csprojResolveAssemblyReference.cache
+c:\Work\Unona\AspNetDating9\obj\Debug\AspNetDating.dll
+c:\Work\Unona\AspNetDating9\obj\Debug\AspNetDating.pdb

@@ -1,0 +1,88 @@
+body {
+
+}
+a, h1, h2, h3, h4, h5 {
+    text-shadow: none;
+}
+a, li, div {
+    border-radius: 0;
+}
+footer,
+header,
+#masthead,
+.navbar-default,
+footer .navbar,
+section,
+aside,
+article {
+    border: 0;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+header,
+footer {
+    padding: 10px 0;
+}
+section {
+    border-radius: 0;
+    box-shadow: none;
+}
+.navbar-default {
+    border-radius: 4px 4px 0 0;
+}
+footer .navbar {
+    border-radius: 0 0 4px 4px;
+}
+.navbar-default .navbar-nav > li a,
+footer .navbar-nav > li a {
+    border: 0;
+    text-shadow: none;
+}
+.navbar-default .navbar-nav > li a:hover,
+.navbar-default .navbar-nav > li a:focus,
+.navbar-default .navbar-nav > li.active a,
+footer .navbar-nav > li a:hover,
+footer .navbar-nav > li a:focus,
+footer .navbar-nav > li.active a {
+    border: 0;
+    text-shadow: none;
+    background-color: transparent;
+    background-image: none;
+}
+.panel,
+.panel-heading,
+article .panel-heading,
+aside .panel-heading,
+.panel-title,
+.panel-body {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+}
+.panel-title {
+    padding: 10px 15px;
+}
+.panel-body {
+    padding: 10px 15px;
+}
+aside .nav {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: -10px;
+}
+aside .panel-body .nav {
+    background-color: transparent;
+}
+aside .nav li {
+    border: 0;
+}
+aside .nav li a:hover,
+aside .nav li a:focus {
+
+}

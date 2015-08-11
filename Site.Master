@@ -1,0 +1,144 @@
+﻿<%@ Import Namespace="AspNetDating.Classes" %>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AspNetDating.Site" %>
+
+<%@ Register TagPrefix="uc1" TagName="Header" Src="Components/Header.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="Footer" Src="Components/Footer.ascx" %>
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="Images/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="Images/font-awesome.css" rel="stylesheet">
+    <link href="Images/ekko-lightbox.css" rel="Stylesheet" type="text/css" />
+    <link href="Images/common.css" rel="Stylesheet" type="text/css" />
+    <link id="linkLess" rel="stylesheet/less" runat="server" />
+    <script src="Images/less.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.browser.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.mousewheel.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/ekko-lightbox.js"></script>
+</head>
+<body id="body" runat="server">
+    <form id="form1" runat="server">
+    <%--<asp:HiddenField ID="hidSelectedLinkID" runat="server" />--%>    
+    <asp:ScriptManager ID="ScriptManagerMaster" EnableHistory="true" AjaxFrameworkMode="Enabled"  runat="server">
+<%--        <CompositeScript>
+            <Scripts>
+                <asp:ScriptReference Name="MicrosoftAjax.js" />
+                <asp:ScriptReference Name="MicrosoftAjaxWebForms.js" />
+            </Scripts>
+        </CompositeScript>--%>
+    </asp:ScriptManager>
+    <asp:UpdateProgress ID="UpdateProgressMaster" runat="server">
+        <ProgressTemplate>
+            <asp:Image ID="imgLoadingProgress" ImageUrl="~/images/loading2.gif" runat="server" />
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <div id="divUserPreview" style="display: none; position: absolute; z-index: 99999">
+        <div id="divUserPreviewImage">
+        </div>
+        <div id="divUserPreviewDetails">
+        </div>
+    </div>
+    <div class="container">
+        <uc1:Header ID="Header1" runat="server" />
+        <div class="clearfix">
+            <section>
+                <asp:ContentPlaceHolder ID="cphContent" runat="server" />
+            </section>
+        </div>
+        <uc1:Footer ID="Footer" runat="server" />
+        <% if (Scripts.IsJQueryRegistered()) { %>
+        <script type="text/javascript">
+            var postbackElement;
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+            Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(pageLoaded);
+            function beginRequest(sender, args) {
+                postbackElement = args.get_postBackElement();
+            }
+            function pageLoaded(sender, args) {
+                var id = '<%= SelectedLinkClientID %>';
+                var suppress = <%= SuppressLinkSelection %>;
+
+                if (typeof (postbackElement) !== "undefined" && $('#' + postbackElement.id).parent().parent().hasClass('nav')) {
+                    $('#' + postbackElement.id).parent().parent().children().removeClass('active');
+                    $('#' + postbackElement.id).parent().addClass("active");
+                }
+                else if (id != "") {
+                    $('#' + id).parent().addClass("active");
+                }
+                else if (!suppress && $('.SideMenuLink').length > 0) {
+                    $('.SideMenuLink').first().parent().addClass("active");
+                }
+            }
+        </script>        
+        <%} %>
+    </div><!-- /.container -->
+    <div id="divNotification" class="row">
+        <div id="divNotificationInner" class="col-sm-10"></div>
+        <div id="divNotificationClose" class="col-sm-2 text-right">
+            <a href="#" onclick="HideNotification(); return false;"><i class="fa fa-times"></i></a>
+        </div>
+    </div><!-- /#divNotification -->
+    </form>
+    <asp:Literal ID="ltrGoogleAnalytics" runat="server"></asp:Literal>
+    <!-- 
+     ASPnetDating 
+     Copyright (C) 2003-2014 eStream 
+     http://www.aspnetdating.com
+
+     IMPORTANT: This is a commercial software product. By using this product  
+     you agree to be bound by the terms of the ASPnetDating license agreement.  
+     It can be found at http://www.aspnetdating.com/agreement.htm
+      
+     This notice may not be removed from the source code. 
+    -->
+
+        <script type="text/javascript">
+            $(document).ready(function ($) {
+                // delegate calls to data-toggle="lightbox"
+                $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+                    event.preventDefault();
+                    return $(this).ekkoLightbox({
+                        onShown: function() {
+                            if (window.console) {
+                                return console.log('Checking our the events huh?');
+                            }
+                        }
+                    });
+                });
+
+                //Programatically call
+                $('#open-image').click(function (e) {
+                    e.preventDefault();
+                    $(this).ekkoLightbox();
+                });
+                $('#open-youtube').click(function (e) {
+                    e.preventDefault();
+                    $(this).ekkoLightbox();
+                });
+
+            });
+        </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.tooltip-go').tooltip({
+            animation: false
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<Status> -- 6/15/2015 8:06:45 PM -- Application Started
+{BirthdayEmails} --<Error> -- 6/15/2015 8:06:48 PM -- System.ArgumentException: Parameter count does not match Parameter Value count.
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.AssignParameterValues(SqlParameter[] commandParameters, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(SqlConnection connection, String spName, Object[] parameterValues)
+   at AspNetDating.Classes.BirthdaySearch.GetResults() in c:\Work\Unona\AspNetDating9\Classes\UserSearch.cs:line 831
+   at AspNetDating.Classes.BirthdayEmails.AsyncProcessMailerQueue(Object data) in c:\Work\Unona\AspNetDating9\Classes\Email.cs:line 540
+<Status> -- 6/15/2015 8:11:52 PM -- Application Started
+<Error> -- 6/15/2015 8:29:03 PM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.34394
+Source: http://localhost:62371/AjaxChat/MessengerCommand.ashx?id=admin&timestamp=130788629421253896&hash=c99284d511436042556afa522e7699305e840497&callback=jQuery111008049618476070464_1434389342516&_=1434389342517
+Exception: System.Web.HttpException (0x80004005): The file '/AjaxChat/MessengerCommand.ashx' does not exist.
+   at System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   at System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.SimpleHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+<Error> -- 6/15/2015 8:29:40 PM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.34394
+Source: http://localhost:62371/AjaxChat/MessengerWindow.aspx
+Exception: System.Web.HttpException (0x80004005): The file '/AjaxChat/MessengerWindow.aspx' does not exist.
+   at System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+<Info> -- 6/15/2015 8:29:41 PM -- System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.GetResponse()
+   at AspNetDating.Admin.Home.checkInstallation() in c:\Work\Unona\AspNetDating9\Admin\Home.aspx.cs:line 79
+<Error> -- 6/15/2015 8:29:43 PM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.34394
+Source: http://localhost:62371/AjaxChat/MessengerWindow.aspx
+Exception: System.Web.HttpException (0x80004005): The file '/AjaxChat/MessengerWindow.aspx' does not exist.
+   at System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+<Info> -- 6/15/2015 8:29:44 PM -- System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.GetResponse()
+   at AspNetDating.Admin.Home.checkInstallation() in c:\Work\Unona\AspNetDating9\Admin\Home.aspx.cs:line 79
+<Status> -- 7/25/2015 9:20:24 PM -- Application Started
+{EventsCleanup} --<Status> -- 7/25/2015 9:20:25 PM -- Events Cleanup starting 9:20 PM
+<Status> -- 7/25/2015 9:20:25 PM -- UpdateIpDefinitionFiles starting...
+<Status> -- 7/25/2015 9:20:25 PM -- UpdateIpDefinitionFiles updating delegated-apnic-latest...
+{EventsCleanup} --<Status> -- 7/25/2015 9:20:25 PM -- Events Cleanup ended 9:20 PM
+<Status> -- 7/25/2015 9:20:45 PM -- UpdateIpDefinitionFiles updating delegated-arin-latest...
+<Error> -- 7/25/2015 9:20:47 PM -- System.Net.WebException: Удаленный сервер возвратил ошибку: (550) Файл недоступен (например, не найден или к нему нет доступа).
+   в System.Net.FtpWebRequest.SyncRequestCallback(Object obj)
+   в System.Net.FtpWebRequest.RequestCallback(Object obj)
+   в System.Net.CommandStream.Dispose(Boolean disposing)
+   в System.IO.Stream.Close()
+   в System.IO.Stream.Dispose()
+   в System.Net.ConnectionPool.Destroy(PooledStream pooledStream)
+   в System.Net.ConnectionPool.PutConnection(PooledStream pooledStream, Object owningObject, Int32 creationTimeout, Boolean canReuse)
+   в System.Net.FtpWebRequest.FinishRequestStage(RequestStage stage)
+   в System.Net.FtpWebRequest.GetResponse()
+   в AspNetDating.Classes.IPToCountry.DownloadIpDefinitionFile(String name, String url) в c:\Work\Unona\AspNetDating9\Classes\Misc.cs:строка 462
+   в AspNetDating.Classes.IPToCountry.UpdateIpDefinitionFiles(Object data) в c:\Work\Unona\AspNetDating9\Classes\Misc.cs:строка 438
+<Status> -- 7/25/2015 9:20:47 PM -- UpdateIpDefinitionFiles finished...
+<Status> -- 7/28/2015 8:40:02 AM -- Application Started
+<Error> -- 28.07.2015 8:40:04 -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: AsyncProcessEmailQueue
+Exception: System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'IIS APPPOOL\ASP.NET v4.0'.
+   в System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   в System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   в System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   в System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   в System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   в System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   в System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   в System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   в System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   в System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   в System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.Open()
+   в AspNetDating.Classes.Config.DB.Open() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1123
+   в AspNetDating.Classes.DBSettings.Get(String Key) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 193
+   в AspNetDating.Classes.DBSettings.Get(String Key, Int32 Default) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 57
+   в AspNetDating.Classes.Config.Mailing.get_RetryCount() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1561
+   в AspNetDating.Classes.EmailQueueItem.LoadQueue() в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 350
+   в AspNetDating.Classes.EmailQueue.AsyncProcessEmailQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 65
+ClientConnectionId:1af898a3-24e2-4b6d-9008-8a73cd3bf65a
+
+<Error> -- 7/28/2015 8:40:04 AM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: Global_Application_Error
+Exception: System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'IIS APPPOOL\ASP.NET v4.0'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at AspNetDating.Classes.Config.DB.Open() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1123
+   at AspNetDating.Classes.BillingPlan.Fetch() in c:\Work\Unona\AspNetDating9\Classes\BillingPlans.cs:line 164
+   at AspNetDating.Classes.Config.Misc.get_SiteIsPaid() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1997
+   at AspNetDating.Classes.Payments.tPayments_Elapsed(Object sender, ElapsedEventArgs e) in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 51
+   at AspNetDating.Classes.Payments.InitializePaymentsTimer() in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 46
+   at AspNetDating.Global.Application_Start(Object sender, EventArgs e) in c:\Work\Unona\AspNetDating9\Global.asax.cs:line 76
+ClientConnectionId:1af898a3-24e2-4b6d-9008-8a73cd3bf65a
+
+{PerformanceTimers} --<Status> -- 7/28/2015 8:40:15 AM -- Dumping performance timers
+
+<Warning> -- 7/28/2015 8:40:15 AM -- Application Ending
+<Status> -- 7/28/2015 8:55:34 AM -- Application Started
+<Error> -- 28.07.2015 8:55:34 -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: AsyncProcessEmailQueue
+Exception: System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'IIS APPPOOL\ASP.NET v4.0'.
+   в System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   в System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   в System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   в System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   в System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   в System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   в System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   в System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   в System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   в System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   в System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.Open()
+   в AspNetDating.Classes.Config.DB.Open() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1123
+   в AspNetDating.Classes.DBSettings.Get(String Key) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 193
+   в AspNetDating.Classes.DBSettings.Get(String Key, Int32 Default) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 57
+   в AspNetDating.Classes.Config.Mailing.get_RetryCount() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1561
+   в AspNetDating.Classes.EmailQueueItem.LoadQueue() в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 350
+   в AspNetDating.Classes.EmailQueue.AsyncProcessEmailQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 65
+ClientConnectionId:091bf464-8223-4a4a-afa1-b9151e8bad98
+
+<Error> -- 7/28/2015 8:55:34 AM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: Global_Application_Error
+Exception: System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'IIS APPPOOL\ASP.NET v4.0'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at AspNetDating.Classes.Config.DB.Open() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1123
+   at AspNetDating.Classes.BillingPlan.Fetch() in c:\Work\Unona\AspNetDating9\Classes\BillingPlans.cs:line 164
+   at AspNetDating.Classes.Config.Misc.get_SiteIsPaid() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1997
+   at AspNetDating.Classes.Payments.tPayments_Elapsed(Object sender, ElapsedEventArgs e) in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 51
+   at AspNetDating.Classes.Payments.InitializePaymentsTimer() in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 46
+   at AspNetDating.Global.Application_Start(Object sender, EventArgs e) in c:\Work\Unona\AspNetDating9\Global.asax.cs:line 76
+ClientConnectionId:091bf464-8223-4a4a-afa1-b9151e8bad98
+
+{PerformanceTimers} --<Status> -- 7/28/2015 8:55:44 AM -- Dumping performance timers
+
+<Warning> -- 7/28/2015 8:55:44 AM -- Application Ending
+<Status> -- 7/28/2015 8:56:44 AM -- Application Started
+<Error> -- 7/28/2015 8:56:45 AM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: Global_Application_Error
+Exception: System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'IIS APPPOOL\ASP.NET v4.0'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at AspNetDating.Classes.Config.DB.Open() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1123
+   at AspNetDating.Classes.BillingPlan.Fetch() in c:\Work\Unona\AspNetDating9\Classes\BillingPlans.cs:line 164
+   at AspNetDating.Classes.Config.Misc.get_SiteIsPaid() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1997
+   at AspNetDating.Classes.Payments.tPayments_Elapsed(Object sender, ElapsedEventArgs e) in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 51
+   at AspNetDating.Classes.Payments.InitializePaymentsTimer() in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 46
+   at AspNetDating.Global.Application_Start(Object sender, EventArgs e) in c:\Work\Unona\AspNetDating9\Global.asax.cs:line 76
+ClientConnectionId:5c7873da-bb84-479f-887e-42b79810db06
+
+<Error> -- 28.07.2015 8:56:45 -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: AsyncProcessEmailQueue
+Exception: System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'IIS APPPOOL\ASP.NET v4.0'.
+   в System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   в System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   в System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   в System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   в System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   в System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   в System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   в System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   в System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   в System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   в System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.Open()
+   в AspNetDating.Classes.Config.DB.Open() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1123
+   в AspNetDating.Classes.DBSettings.Get(String Key) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 193
+   в AspNetDating.Classes.DBSettings.Get(String Key, Int32 Default) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 57
+   в AspNetDating.Classes.Config.Mailing.get_RetryCount() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1561
+   в AspNetDating.Classes.EmailQueueItem.LoadQueue() в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 350
+   в AspNetDating.Classes.EmailQueue.AsyncProcessEmailQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 65
+ClientConnectionId:5c7873da-bb84-479f-887e-42b79810db06
+
+{PerformanceTimers} --<Status> -- 7/28/2015 8:56:55 AM -- Dumping performance timers
+
+<Warning> -- 7/28/2015 8:56:55 AM -- Application Ending
+<Status> -- 7/28/2015 9:01:08 AM -- Application Started
+{EventsCleanup} --<Status> -- 28.07.2015 9:01:14 -- Events Cleanup starting 9:01
+{EventsCleanup} --<Status> -- 28.07.2015 9:01:19 -- Events Cleanup ended 9:01
+{PerformanceTimers} --<Status> -- 7/28/2015 9:22:40 AM -- Dumping performance timers
+aspnetdating9 x 1 = 00:00:04.7862738
+default.aspx x 1 = 00:00:54.0930940
+aspnetdating9/ x 1 = 00:00:54.1430968
+webresource.axd x 1 = 00:00:00.4540260
+scriptresource.axd x 3 = 00:00:00.1360078
+
+<Warning> -- 7/28/2015 9:22:40 AM -- Application Ending
+<Status> -- 7/29/2015 8:39:53 AM -- Application Started
+{PerformanceTimers} --<Status> -- 7/29/2015 9:00:43 AM -- Dumping performance timers
+aspnetdating9 x 1 = 00:00:06.2113553
+default.aspx x 1 = 00:00:15.4528838
+aspnetdating9/ x 1 = 00:00:15.5798911
+
+<Warning> -- 7/29/2015 9:00:43 AM -- Application Ending
+<Status> -- 7/29/2015 6:24:29 PM -- Application Started
+<Error> -- 29.07.2015 18:24:35 -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: AsyncProcessEmailQueue
+Exception: System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'IIS APPPOOL\ASP.NET v4.0'.
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   в System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.Open()
+   в AspNetDating.Classes.Config.DB.Open() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1123
+   в AspNetDating.Classes.DBSettings.Get(String Key) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 193
+   в AspNetDating.Classes.DBSettings.Get(String Key, Int32 Default) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 57
+   в AspNetDating.Classes.Config.Mailing.get_RetryCount() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1561
+   в AspNetDating.Classes.EmailQueueItem.LoadQueue() в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 350
+   в AspNetDating.Classes.EmailQueue.AsyncProcessEmailQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 65
+ClientConnectionId:08196ae6-9c3b-4247-8c92-2f6352143b93
+
+<Error> -- 7/29/2015 6:24:35 PM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: Global_Application_Error
+Exception: System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'IIS APPPOOL\ASP.NET v4.0'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at AspNetDating.Classes.Config.DB.Open() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1123
+   at AspNetDating.Classes.BillingPlan.Fetch() in c:\Work\Unona\AspNetDating9\Classes\BillingPlans.cs:line 164
+   at AspNetDating.Classes.Config.Misc.get_SiteIsPaid() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1997
+   at AspNetDating.Classes.Payments.tPayments_Elapsed(Object sender, ElapsedEventArgs e) in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 51
+   at AspNetDating.Classes.Payments.InitializePaymentsTimer() in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 46
+   at AspNetDating.Global.Application_Start(Object sender, EventArgs e) in c:\Work\Unona\AspNetDating9\Global.asax.cs:line 76
+ClientConnectionId:08196ae6-9c3b-4247-8c92-2f6352143b93
+
+{PerformanceTimers} --<Status> -- 7/29/2015 6:24:46 PM -- Dumping performance timers
+
+<Warning> -- 7/29/2015 6:24:46 PM -- Application Ending
+<Status> -- 7/29/2015 6:25:41 PM -- Application Started
+<Error> -- 29.07.2015 18:25:42 -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: AsyncProcessEmailQueue
+Exception: System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnetdating5" requested by the login. The login failed.
+Login failed for user 'aspnetdating5'.
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   в System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.Open()
+   в AspNetDating.Classes.Config.DB.Open() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1123
+   в AspNetDating.Classes.DBSettings.Get(String Key) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 193
+   в AspNetDating.Classes.DBSettings.Get(String Key, Int32 Default) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 57
+   в AspNetDating.Classes.Config.Mailing.get_RetryCount() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1561
+   в AspNetDating.Classes.EmailQueueItem.LoadQueue() в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 350
+   в AspNetDating.Classes.EmailQueue.AsyncProcessEmailQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 65
+ClientConnectionId:5dccab2c-3702-48b9-b54e-d0991683b84c
+
+<Error> -- 7/29/2015 6:25:42 PM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: Global_Application_Error
+Exception: System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnetdating5" requested by the login. The login failed.
+Login failed for user 'aspnetdating5'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at AspNetDating.Classes.Config.DB.Open() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1123
+   at AspNetDating.Classes.BillingPlan.Fetch() in c:\Work\Unona\AspNetDating9\Classes\BillingPlans.cs:line 164
+   at AspNetDating.Classes.Config.Misc.get_SiteIsPaid() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1997
+   at AspNetDating.Classes.Payments.tPayments_Elapsed(Object sender, ElapsedEventArgs e) in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 51
+   at AspNetDating.Classes.Payments.InitializePaymentsTimer() in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 46
+   at AspNetDating.Global.Application_Start(Object sender, EventArgs e) in c:\Work\Unona\AspNetDating9\Global.asax.cs:line 76
+ClientConnectionId:5dccab2c-3702-48b9-b54e-d0991683b84c
+
+{PerformanceTimers} --<Status> -- 7/29/2015 6:25:52 PM -- Dumping performance timers
+
+<Warning> -- 7/29/2015 6:25:52 PM -- Application Ending
+<Status> -- 7/29/2015 6:26:39 PM -- Application Started
+<Error> -- 29.07.2015 18:26:39 -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: AsyncProcessEmailQueue
+Exception: System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnetdating5" requested by the login. The login failed.
+Login failed for user 'aspnetdating5'.
+   в System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   в System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   в System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   в System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   в System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   в System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   в System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   в System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   в System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   в System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   в System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.Open()
+   в AspNetDating.Classes.Config.DB.Open() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1123
+   в AspNetDating.Classes.DBSettings.Get(String Key) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 193
+   в AspNetDating.Classes.DBSettings.Get(String Key, Int32 Default) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 57
+   в AspNetDating.Classes.Config.Mailing.get_RetryCount() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1561
+   в AspNetDating.Classes.EmailQueueItem.LoadQueue() в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 350
+   в AspNetDating.Classes.EmailQueue.AsyncProcessEmailQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 65
+ClientConnectionId:ef97d346-4c98-4f46-9682-ceb99b89fe90
+
+<Error> -- 7/29/2015 6:26:39 PM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.36597
+Source: Global_Application_Error
+Exception: System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnetdating5" requested by the login. The login failed.
+Login failed for user 'aspnetdating5'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at AspNetDating.Classes.Config.DB.Open() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1123
+   at AspNetDating.Classes.BillingPlan.Fetch() in c:\Work\Unona\AspNetDating9\Classes\BillingPlans.cs:line 164
+   at AspNetDating.Classes.Config.Misc.get_SiteIsPaid() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1997
+   at AspNetDating.Classes.Payments.tPayments_Elapsed(Object sender, ElapsedEventArgs e) in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 51
+   at AspNetDating.Classes.Payments.InitializePaymentsTimer() in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 46
+   at AspNetDating.Global.Application_Start(Object sender, EventArgs e) in c:\Work\Unona\AspNetDating9\Global.asax.cs:line 76
+ClientConnectionId:ef97d346-4c98-4f46-9682-ceb99b89fe90
+
+{PerformanceTimers} --<Status> -- 7/29/2015 6:26:49 PM -- Dumping performance timers
+
+<Warning> -- 7/29/2015 6:26:49 PM -- Application Ending
+<Status> -- 7/29/2015 6:30:52 PM -- Application Started
+{BirthdayEmails} --<Error> -- 29.07.2015 18:30:55 -- System.IndexOutOfRangeException: ModerationScores
+   в System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   в System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   в AspNetDating.Classes.User.Load() в c:\Work\Unona\AspNetDating9\Classes\Users.cs:строка 1522
+   в AspNetDating.Classes.User.Load(String username) в c:\Work\Unona\AspNetDating9\Classes\Users.cs:строка 1411
+   в AspNetDating.Classes.BirthdayEmails.AsyncProcessMailerQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 549
+{VisitSiteReminderEmails} --<Error> -- 29.07.2015 18:30:55 -- System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_Settings'. Cannot insert duplicate key in object 'dbo.Settings'. The duplicate key value is (CommunityFaceControlSystem_EnableCommunityFaceControl).
+The statement has been terminated.
+   в System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   в System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   в System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, Nullable`1 timeout, SqlParameter[] commandParameters)
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   в AspNetDating.Classes.DBSettings.Set(String Key, String Value) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 291
+   в AspNetDating.Classes.DBSettings.Set(String Key, Boolean Value) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 216
+   в AspNetDating.Classes.DBSettings.Get(String Key, Boolean Default) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 42
+   в AspNetDating.Classes.Config.CommunityFaceControlSystem.get_EnableCommunityFaceControl() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 582
+   в AspNetDating.Classes.User..ctor() в c:\Work\Unona\AspNetDating9\Classes\Users.cs:строка 1151
+   в AspNetDating.Classes.User..ctor(String Username) в c:\Work\Unona\AspNetDating9\Classes\Users.cs:строка 1212
+   в AspNetDating.Classes.User.Load(String username) в c:\Work\Unona\AspNetDating9\Classes\Users.cs:строка 1410
+   в AspNetDating.Classes.VisitSiteReminderEmails.AsyncProcessMailerQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 743
+ClientConnectionId:3bfe2478-d795-4ee2-ac67-9ac65cae6449
+{HourlyStats} --<Error> -- 29.07.2015 18:31:40 -- System.Data.SqlClient.SqlException (0x80131904): Истекло время ожидания (Timeout). Время ожидания истекло до завершения операции или сервер не отвечает. ---> System.ComponentModel.Win32Exception (0x80004005): Время ожидания операции истекло
+   в System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   в System.Data.SqlClient.SqlDataReader.get_MetaData()
+   в System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   в System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   в AspNetDating.Classes.HourlyStats.FetchMessagesCount(DateTime from, DateTime to) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 116
+   в AspNetDating.Classes.HourlyStats.AsyncProcessMailerQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 82
+ClientConnectionId:495ac726-d44f-414d-b1ed-975c4b7db831
+{PerformanceTimers} --<Status> -- 7/29/2015 6:51:26 PM -- Dumping performance timers
+
+<Warning> -- 7/29/2015 6:51:26 PM -- Application Ending
+<Status> -- 7/29/2015 11:22:39 PM -- Application Started
+<Status> -- 7/29/2015 11:27:28 PM -- Application Started
+<Error> -- 7/29/2015 11:29:39 PM -- System.ArgumentException: Parameter count does not match Parameter Value count.
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.AssignParameterValues(SqlParameter[] commandParameters, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, String spName, Object[] parameterValues)
+   at AspNetDating.Classes.Translation.FetchTranslation(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 417
+   at AspNetDating.Classes.Lang.Trans(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 94
+   at AspNetDating.Classes.Lang.Trans(String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 77
+<Error> -- 7/29/2015 11:31:32 PM -- System.ArgumentException: Parameter count does not match Parameter Value count.
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.AssignParameterValues(SqlParameter[] commandParameters, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, String spName, Object[] parameterValues)
+   at AspNetDating.Classes.Translation.FetchTranslation(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 417
+   at AspNetDating.Classes.Lang.Trans(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 94
+   at AspNetDating.Classes.Lang.Trans(String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 77
+<Error> -- 7/29/2015 11:32:07 PM -- System.ArgumentException: Parameter count does not match Parameter Value count.
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.AssignParameterValues(SqlParameter[] commandParameters, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, String spName, Object[] parameterValues)
+   at AspNetDating.Classes.Translation.FetchTranslation(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 417
+   at AspNetDating.Classes.Lang.Trans(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 94
+   at AspNetDating.Classes.Lang.Trans(String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 77
+<Error> -- 7/29/2015 11:36:21 PM -- System.ArgumentException: Parameter count does not match Parameter Value count.
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.AssignParameterValues(SqlParameter[] commandParameters, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, String spName, Object[] parameterValues)
+   at AspNetDating.Classes.Translation.FetchTranslation(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 417
+   at AspNetDating.Classes.Lang.Trans(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 94
+   at AspNetDating.Classes.Lang.Trans(String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 77
+<Status> -- 7/29/2015 11:37:20 PM -- Application Started
+<Error> -- 7/29/2015 11:39:11 PM -- System.ArgumentException: Parameter count does not match Parameter Value count.
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.AssignParameterValues(SqlParameter[] commandParameters, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(SqlConnection connection, String spName, Object[] parameterValues)
+   at AspNetDating.Classes.Translation.SaveTranslation(Int32 languageId, String key, String value, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 455
+   at AspNetDating.Classes.Translation.FetchTranslation(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 427
+   at AspNetDating.Classes.Lang.Trans(Int32 languageId, String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 94
+   at AspNetDating.Classes.Lang.Trans(String key, Boolean adminPanel) in c:\Work\Unona\AspNetDating9\Classes\Language.cs:line 77
+<Status> -- 7/30/2015 7:57:51 AM -- Application Started
+{HourlyStats} --<Error> -- 7/30/2015 7:58:36 AM -- System.Data.SqlClient.SqlException (0x80131904): Истекло время ожидания (Timeout). Время ожидания истекло до завершения операции или сервер не отвечает. ---> System.ComponentModel.Win32Exception (0x80004005): Время ожидания операции истекло
+   в System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   в System.Data.SqlClient.SqlDataReader.get_MetaData()
+   в System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   в System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, String spName, Object[] parameterValues)
+   в AspNetDating.Classes.HourlyStats.FetchMessagesCount(DateTime from, DateTime to) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 116
+   в AspNetDating.Classes.HourlyStats.AsyncProcessMailerQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 82
+ClientConnectionId:f39760b0-a784-4275-bd07-ff9c59a22441
+<Status> -- 7/30/2015 8:07:44 AM -- Application Started
+{PerformanceTimers} --<Status> -- 7/30/2015 8:27:14 AM -- Dumping performance timers
+aspnetdating9 x 1 = 00:00:08.5554893
+default.aspx x 1 = 00:02:06.6332430
+aspnetdating9/ x 1 = 00:02:06.7162477
+webresource.axd x 1 = 00:00:01.1280645
+scriptresource.axd x 3 = 00:00:01.1550660
+
+<Warning> -- 7/30/2015 8:27:14 AM -- Application Ending
+<Status> -- 7/30/2015 8:27:19 AM -- Application Started
+{PerformanceTimers} --<Status> -- 7/30/2015 8:45:47 AM -- Dumping performance timers
+default.aspx x 1 = 00:00:10.8146186
+aspnetdating9/ x 1 = 00:00:10.8966232
+webresource.axd x 1 = 00:00:00.0030001
+scriptresource.axd x 3 = 00:00:00.0030002
+
+<Warning> -- 7/30/2015 8:45:47 AM -- Application Ending
+<Status> -- 7/30/2015 8:45:50 AM -- Application Started
+{PerformanceTimers} --<Status> -- 7/30/2015 9:07:25 AM -- Dumping performance timers
+default.aspx x 1 = 00:00:09.3685359
+aspnetdating9/ x 1 = 00:00:09.5305451
+scriptresource.axd x 3 = 00:00:00.0330019
+webresource.axd x 1 = 00:00:00.0030002
+image.ashx x 399 = 00:00:00.9540545
+
+<Warning> -- 7/30/2015 9:07:25 AM -- Application Ending
+<Status> -- 7/30/2015 7:14:33 PM -- Application Started
+{EventsCleanup} --<Status> -- 30.07.2015 19:14:38 -- Events Cleanup starting 19:14
+{EventsCleanup} --<Status> -- 30.07.2015 19:14:42 -- Events Cleanup ended 19:14
+{HourlyStats} --<Error> -- 30.07.2015 19:15:43 -- System.Data.SqlClient.SqlException (0x80131904): Истекло время ожидания (Timeout). Время ожидания истекло до завершения операции или сервер не отвечает. ---> System.ComponentModel.Win32Exception (0x80004005): Время ожидания операции истекло
+   в System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   в System.Data.SqlClient.SqlDataReader.get_MetaData()
+   в System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   в System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   в AspNetDating.Classes.HourlyStats.FetchMessagesCount(DateTime from, DateTime to) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 116
+   в AspNetDating.Classes.HourlyStats.AsyncProcessMailerQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 82
+ClientConnectionId:0fa293dd-57e9-4c3b-b43a-d78cd3d3bfd2
+{PerformanceTimers} --<Status> -- 7/30/2015 7:37:27 PM -- Dumping performance timers
+aspnetdating9 x 1 = 00:00:02.0941198
+default.aspx x 1 = 00:01:43.2609062
+aspnetdating9/ x 1 = 00:01:43.3839132
+
+<Warning> -- 7/30/2015 7:37:27 PM -- Application Ending
+<Status> -- 7/30/2015 10:29:02 PM -- Application Started
+{PerformanceTimers} --<Status> -- 7/30/2015 10:53:59 PM -- Dumping performance timers
+admin x 2 = 00:00:00.2620150
+admin/ x 2 = 00:00:00.3900223
+browsevideos.aspx x 1 = 00:00:29.1486672
+default.aspx x 2 = 00:00:12.8827368
+aspnetdating9/ x 2 = 00:00:12.9317396
+home.aspx x 1 = 00:00:03.3451914
+scriptresource.axd x 1 = 00:00:00.8180468
+jsdebug x 1 = 00:00:02.4461399
+updateonline x 1 = 00:00:00.2350134
+image.ashx x 1 = 00:00:03.0561748
+messengercommand.ashx x 1 = 00:00:00.5380308
+browseusers.aspx x 1 = 00:00:24.7024129
+login.aspx x 9 = 00:00:00.0450026
+
+<Warning> -- 7/30/2015 10:53:59 PM -- Application Ending
+<Status> -- 7/31/2015 6:48:58 AM -- Application Started
+<Error> -- 31.07.2015 6:49:22 -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.40265
+Source: AsyncProcessEmailQueue
+Exception: System.InvalidOperationException: Истекло время ожидания. Время ожидания истекло раньше, чем удалось получить подключение из пула. Возможно, все подключения в пуле уже используются и достигнут максимальный размер пула.
+   в System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   в System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   в System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   в System.Data.SqlClient.SqlConnection.Open()
+   в AspNetDating.Classes.Config.DB.Open() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1123
+   в AspNetDating.Classes.DBSettings.Get(String Key) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 193
+   в AspNetDating.Classes.DBSettings.Get(String Key, Int32 Default) в c:\Work\Unona\AspNetDating9\Classes\DBSettings.cs:строка 57
+   в AspNetDating.Classes.Config.Mailing.get_RetryCount() в c:\Work\Unona\AspNetDating9\Classes\Config.cs:строка 1561
+   в AspNetDating.Classes.EmailQueueItem.LoadQueue() в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 350
+   в AspNetDating.Classes.EmailQueue.AsyncProcessEmailQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\Email.cs:строка 65
+
+<Error> -- 7/31/2015 6:49:22 AM -- 
+Machine: EMACHINE
+Framework Version: 4.0.30319.18444
+Assembly Version: 9.0.0.40265
+Source: Global_Application_Error
+Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): Не удается найти указанный файл
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at AspNetDating.Classes.Config.DB.Open() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1123
+   at AspNetDating.Classes.BillingPlan.Fetch() in c:\Work\Unona\AspNetDating9\Classes\BillingPlans.cs:line 164
+   at AspNetDating.Classes.Config.Misc.get_SiteIsPaid() in c:\Work\Unona\AspNetDating9\Classes\Config.cs:line 1997
+   at AspNetDating.Classes.Payments.tPayments_Elapsed(Object sender, ElapsedEventArgs e) in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 51
+   at AspNetDating.Classes.Payments.InitializePaymentsTimer() in c:\Work\Unona\AspNetDating9\Classes\Payments.cs:line 46
+   at AspNetDating.Global.Application_Start(Object sender, EventArgs e) in c:\Work\Unona\AspNetDating9\Global.asax.cs:line 76
+ClientConnectionId:00000000-0000-0000-0000-000000000000--------------------------------The following InnerException reported: System.ComponentModel.Win32Exception (0x80004005): Не удается найти указанный файл
+
+{PerformanceTimers} --<Status> -- 7/31/2015 6:49:39 AM -- Dumping performance timers
+
+<Warning> -- 7/31/2015 6:49:39 AM -- Application Ending
+<Status> -- 7/31/2015 7:49:03 AM -- Application Started
+{HourlyStats} --<Error> -- 7/31/2015 7:49:39 AM -- System.Data.SqlClient.SqlException (0x80131904): Истекло время ожидания (Timeout). Время ожидания истекло до завершения операции или сервер не отвечает. ---> System.ComponentModel.Win32Exception (0x80004005): Время ожидания операции истекло
+   в System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   в System.Data.SqlClient.SqlDataReader.get_MetaData()
+   в System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   в System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, String spName, Object[] parameterValues)
+   в AspNetDating.Classes.HourlyStats.FetchMessagesCount(DateTime from, DateTime to) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 116
+   в AspNetDating.Classes.HourlyStats.AsyncProcessMailerQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 82
+ClientConnectionId:12ba5604-036b-4fa1-9965-63638f7e457f
+<Status> -- 7/31/2015 8:01:50 AM -- Application Started
+<Info> -- 7/31/2015 8:01:58 AM -- System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.GetResponse()
+   at AspNetDating.Admin.Home.checkInstallation() in c:\Work\Unona\AspNetDating9\Admin\Home.aspx.cs:line 79
+<Info> -- 7/31/2015 8:16:40 AM -- System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.GetResponse()
+   at AspNetDating.Admin.Home.checkInstallation() in c:\Work\Unona\AspNetDating9\Admin\Home.aspx.cs:line 79
+<Info> -- 7/31/2015 8:16:42 AM -- System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.GetResponse()
+   at AspNetDating.Admin.Home.checkInstallation() in c:\Work\Unona\AspNetDating9\Admin\Home.aspx.cs:line 79
+{PerformanceTimers} --<Status> -- 7/31/2015 8:38:53 AM -- Dumping performance timers
+messengerwindow.aspx x 3 = 00:00:03.3231901
+image.ashx x 1 = 00:00:33.1405090
+
+<Warning> -- 7/31/2015 8:38:53 AM -- Application Ending
+<Status> -- 8/6/2015 7:41:03 AM -- Application Started
+<Status> -- 8/6/2015 7:41:08 AM -- UpdateIpDefinitionFiles starting...
+<Status> -- 8/6/2015 7:41:08 AM -- UpdateIpDefinitionFiles updating delegated-apnic-latest...
+{EventsCleanup} --<Status> -- 8/6/2015 7:41:08 AM -- Events Cleanup starting 7:41 AM
+{EventsCleanup} --<Status> -- 8/6/2015 7:41:09 AM -- Events Cleanup ended 7:41 AM
+<Status> -- 8/6/2015 7:41:23 AM -- UpdateIpDefinitionFiles updating delegated-arin-latest...
+<Error> -- 8/6/2015 7:41:25 AM -- System.Net.WebException: Удаленный сервер возвратил ошибку: (550) Файл недоступен (например, не найден или к нему нет доступа).
+   в System.Net.FtpWebRequest.SyncRequestCallback(Object obj)
+   в System.Net.FtpWebRequest.RequestCallback(Object obj)
+   в System.Net.CommandStream.Dispose(Boolean disposing)
+   в System.IO.Stream.Close()
+   в System.IO.Stream.Dispose()
+   в System.Net.ConnectionPool.Destroy(PooledStream pooledStream)
+   в System.Net.ConnectionPool.PutConnection(PooledStream pooledStream, Object owningObject, Int32 creationTimeout, Boolean canReuse)
+   в System.Net.FtpWebRequest.FinishRequestStage(RequestStage stage)
+   в System.Net.FtpWebRequest.GetResponse()
+   в AspNetDating.Classes.IPToCountry.DownloadIpDefinitionFile(String name, String url) в c:\Work\Unona\AspNetDating9\Classes\Misc.cs:строка 462
+   в AspNetDating.Classes.IPToCountry.UpdateIpDefinitionFiles(Object data) в c:\Work\Unona\AspNetDating9\Classes\Misc.cs:строка 438
+<Status> -- 8/6/2015 7:41:25 AM -- UpdateIpDefinitionFiles finished...
+{HourlyStats} --<Error> -- 8/6/2015 7:41:50 AM -- System.Data.SqlClient.SqlException (0x80131904): Истекло время ожидания (Timeout). Время ожидания истекло до завершения операции или сервер не отвечает. ---> System.ComponentModel.Win32Exception (0x80004005): Время ожидания операции истекло
+   в System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   в System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   в System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   в System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   в System.Data.SqlClient.SqlDataReader.get_MetaData()
+   в System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   в System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   в System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   в Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(SqlConnection connection, String spName, Object[] parameterValues)
+   в AspNetDating.Classes.HourlyStats.FetchMessagesCount(DateTime from, DateTime to) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 116
+   в AspNetDating.Classes.HourlyStats.AsyncProcessMailerQueue(Object data) в c:\Work\Unona\AspNetDating9\Classes\UsersStats.cs:строка 82
+ClientConnectionId:d05605af-6022-4cb3-9341-22de52d8ba10
+<Status> -- 8/6/2015 7:47:07 AM -- Application Started
+<Info> -- 8/6/2015 7:47:12 AM -- System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.GetResponse()
+   at AspNetDating.Admin.Home.checkInstallation() in c:\Work\Unona\AspNetDating9\Admin\Home.aspx.cs:line 79
+{PerformanceTimers} --<Status> -- 8/6/2015 7:50:34 AM -- Dumping performance timers
+messengerwindow.aspx x 1 = 00:00:00.9330533
+
+<Warning> -- 8/6/2015 7:50:34 AM -- Application Ending
+<Status> -- 8/6/2015 7:50:43 AM -- Application Started
+<Status> -- 8/6/2015 7:54:37 AM -- Application Started
+<Status> -- 8/6/2015 7:58:22 AM -- Application Started
+<Status> -- 8/6/2015 7:59:11 AM -- Application Started
+{PerformanceTimers} --<Status> -- 8/6/2015 8:22:57 AM -- Dumping performance timers
+messengercommand.ashx x 7 = 00:00:00.8660495
+image.ashx x 1 = 00:00:34.1329523
+
+<Warning> -- 8/6/2015 8:22:57 AM -- Application Ending

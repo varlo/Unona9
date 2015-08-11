@@ -1,0 +1,85 @@
+.showuser, .showuserphotos, .showuserblog, .showusererror, .reportuserabuse, .showuserevents{
+	background:#fecb00 url(BodyBgr.jpg) no-repeat bottom left fixed !important; /* EDITABLE(Page background) */
+}
+.skincolor, .skincolorlabel{
+color:#fff !important; /* EDITABLE(Text color) */
+}
+.skinlinkcolor {
+color:#feed01 !important; /* EDITABLE(Link color) */
+}
+.skinactionlinkcolor{
+color:#feed01 !important; /* EDITABLE(Left Menu Link color) */
+}
+.skinnavlinkcolor{
+color:#e32d1f !important;/* EDITABLE(Header and Footer Link color) */
+}
+.SkinSubheaderLinkColor{
+color:#e32d1f !important;/* EDITABLE(Subheader Link color) */
+}
+.skinfooterlinkcolor, .skinheaderlinkcolor{}
+.SkinInfoText{
+color:#ccc !important; /* EDITABLE(Info Text color) */
+}
+.SkinHeaderLineColor{
+color:#e85160 !important; /* EDITABLE(HeaderLine color) */
+}
+.FooterColor{
+color:#000 !important; /* EDITABLE(Footer color) */
+}
+.SubheaderColor{
+color:#000 !important; /* EDITABLE(Subheader color) */
+}
+
+#layout{}
+#nav ul{ background:url(BlackBgr.png); border:1px solid #000; border-top:0px}
+/* Left Content */
+.SideMenuBox{
+	background:url(BlackBgr.png) !important;
+	border:1px solid #000 !important;
+}
+.SideMenuBoxTop {
+	background:url(BlackBgr.png) !important;
+}
+.SideMenuBoxHeader {
+	color: #ff9400 !important;	
+	background:url(LeftSeparator.png) no-repeat bottom !important;	
+}
+.SideMenuBoxContent{
+	background:transparent !important
+}
+/* End Left Content */
+
+/* Right Content */
+.StandardBox, .StandardBoxX{
+	border:1px solid #000 !important;
+	background:url(BlackBgr.png) !important;
+}
+.StandardBoxTop {
+	text-align:left !important;
+	background:url(BlackBgr.png) !important;
+}
+.StandardBoxHeader {
+	color: #ff9400 !important;
+	background:url(RightSeparator.png) no-repeat bottom !important;	
+}
+.SectionHeading{
+	background:url(RightSeparator.png) no-repeat bottom !important;
+}
+.line{
+	background:url(RightSeparator.png) no-repeat !important;
+}
+/* End Right Content */
+.SideMenuBoxContent .active, .SideMenuLink{
+	background:url(LeftSeparator.png) no-repeat bottom !important;
+}
+.photoframe{
+	border:1px solid #fff !important;
+	padding:1px !important;
+}
+.viewphotos img{
+	border:1px solid #fff !important;	
+	padding:1px !important;
+}
+.modes{
+	background:url(RightSeparator.png) no-repeat bottom !important;
+}

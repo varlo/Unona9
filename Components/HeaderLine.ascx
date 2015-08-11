@@ -1,0 +1,2 @@
+﻿<%@ Control Language="c#" AutoEventWireup="True" Codebehind="HeaderLine.ascx.cs" Inherits="AspNetDating.Components.HeaderLine" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<asp:Label ID="lblTitle" Runat="server" />

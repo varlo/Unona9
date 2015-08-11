@@ -1,0 +1,55 @@
+<%@ Import Namespace="AspNetDating" %>
+<%@ Import Namespace="AspNetDating.Classes" %>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ShowUser.master.cs" Inherits="AspNetDating.ShowUser"
+    MasterPageFile="Site.Master" %>
+
+<%@ MasterType TypeName="AspNetDating.Site" %>
+
+<%@ Register TagPrefix="uc1" TagName="SmallBoxStart" Src="Components/SmallBoxStart.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SmallBoxEnd" Src="Components/SmallBoxEnd.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SimilarProfiles" Src="Components/SimilarProfiles.ascx" %>
+<%@ Register TagPrefix="components" Namespace="AspNetDating.Components" Assembly="AspNetDating" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cphContent" runat="server">
+    <aside>
+	    <asp:ContentPlaceHolder ID="cphLeftContent" runat="server" />
+        <uc1:SmallBoxStart ID="SmallBoxStart2" runat="server" />
+            <ul class="nav">
+                <li><a id="lnkViewProfile" enableviewstate="false" runat="server"><%= "View Profile".Translate() %></a></li>
+                <li id="divTranslate" visible="false" runat="server"><a href="#" id="btnTranslate"><%= "Translate Profile".Translate() %></a></li>
+                <li><a id="lnkViewPhotos" enableviewstate="false" runat="server"><%= "View Photos".Translate() %></a></li>
+                <li id="pnlBlog" runat="server"><a id="lnkViewBlog" enableviewstate="false" runat="server"><%= "View Blog".Translate() %></a></li>
+                <li id="pnlViewEvents" runat="server"><a id="lnkViewEvents" enableviewstate="false" runat="server"><%= "View Events".Translate() %></a></li>
+                <li><a id="lnkSendMessage" enableviewstate="false" runat="server"><%= "Send Message".Translate() %></a></li>
+                <li><a id="lnkSendToFriend" enableviewstate="false" runat="server"><%= "Send this profile to a friend".Translate() %></a></li>
+                <li id="pnlSendEcard" runat="server"><a id="lnkSendEcard" enableviewState="false" runat="server"><%= "Send e-card".Translate() %></a></li>
+                <li id="pnlAddToFavourites" runat="server"><a id="lnkAddToFavourites" enableviewstate="false" runat="server"><%= "Add to Favorites".Translate() %></a></li>
+                <li id="pnlRemoveFromFavourites" runat="server"><a id="lnkRemoveFromFavourites" enableviewstate="false" runat="server"><%= "Remove from Favorites".Translate() %></a></li>
+                <li id="pnlAddToFriends" runat="server"><a id="lnkAddToFriends" enableviewstate="false" runat="server"><%= "Add to Friends".Translate() %></a></li>
+                <li id="pnlRemoveFromFriends" runat="server"><a id="lnkRemoveFromFriends" enableviewstate="false" runat="server"><%= "Remove from Friends".Translate() %></a></li>
+                <li id="pnlViewMutualFriends" runat="server"><asp:LinkButton ID="lnkViewMutualFriends" runat="server" EnableViewState="false" onclick="lnkViewMutualFriends_Click" /></li>
+                <li id="pnlBlockUser" runat="server"><asp:LinkButton ID="lnkBlockUser" runat="server" EnableViewState="false" OnClick="lnkBlockUser_Click" /></li>
+                <li id="pnlUnblockUser" runat="server"><asp:LinkButton ID="lnkUnblockUser" runat="server" EnableViewState="false" OnClick="lnkUnblockUser_Click" /></li>
+                <li id="pnlGrantAccessToPrivatePhotos" runat="server"><asp:LinkButton ID="lnkGrantAccess" runat="server" EnableViewState="false" OnClick="lnkGrantAccess_Click" /></li>
+                <li id="pnlDenyAccessToPrivatePhotos" runat="server"><asp:LinkButton ID="lnkDenyAccess" runat="server" EnableViewState="false" OnClick="lnkDenyAccess_Click" /></li>
+                <li id="pnlGrantAccessToPrivateVideo" runat="server"><asp:LinkButton ID="lnkGrantVideoAccess" runat="server" EnableViewState="false" OnClick="lnkGrantVideoAccess_Click" /></li>
+                <li id="pnlDenyAccessToPrivateVideo" runat="server"><asp:LinkButton ID="lnkDenyVideoAccess" runat="server" EnableViewState="false" OnClick="lnkDenyVideoAccess_Click" /></li>
+                <li id="pnlGrantAccessToPrivateAudio" runat="server"><asp:LinkButton ID="lnkGrantAudioAccess" runat="server" EnableViewState="false" OnClick="lnkGrantAudioAccess_Click" /></li>
+                <li id="pnlDenyAccessToPrivateAudio" runat="server"><asp:LinkButton ID="lnkDenyAudioAccess" runat="server" EnableViewState="false" OnClick="lnkDenyAudioAccess_Click" /></li>
+                <li id="pnlCertifyUserIsGenuine" runat="server"><asp:LinkButton ID="lnkCertifyUserIsGenuine" runat="server" EnableViewState="false" OnClick="lnkCertifyUserIsGenuine_Click" /></li>
+                <li id="pnlRemoveVerifiedUserStatus" runat="server"><asp:LinkButton ID="lnkRemoveVerifiedUserStatus" runat="server" EnableViewState="false" OnClick="lnkRemoveVerifiedUserStatus_Click" /></li>
+                <li id="pnlInstantMessenger" runat="server">
+                    <a href="" id="lnkInstantMessenger" runat="server"><%= "Start Messenger".Translate() %></a>
+                    <asp:LinkButton ID="lnkInstantMessengerPay" Visible="false" runat="server" onclick="lnkInstantMessengerPay_Click"><%= "Start Messenger".Translate() %></asp:LinkButton>
+                </li>
+                <li id="pnlReportAbuseLink" visible="false" runat="server"><a ID="lnkReportAbuse" runat="server" enableviewstate="false"><%= "Report Abuse".Translate() %></a></li>
+            </ul>
+        <uc1:SmallBoxEnd ID="SmallBoxEnd2" runat="server"/>
+        <uc1:SimilarProfiles id="SimilarProfiles1" runat="server"/>
+        <components:BannerView id="bvShowUserLeftBottom" runat="server" Key="ShowUserLeftBottom"/>
+    </aside>
+    <article>
+        <asp:ContentPlaceHolder ID="cphInnerContent" runat="server" />
+    </article>
+</asp:Content>

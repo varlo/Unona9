@@ -1,0 +1,15 @@
+.showuser,
+.showuserphotos,
+.showuserblog,
+.showusererror,
+.reportuserabuse,
+.showuserevents {
+	background-color: #000;
+    background-image: url(BodyBgr.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-attachment: fixed;
+}
+a {
+    color: #0022d1;
+}

@@ -1,0 +1,156 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using AspNetDating.Classes;
+using System.Web.UI.HtmlControls;
+
+namespace AspNetDating.Components.Search
+{
+    public partial class SearchBoxDropDown : UserControl, IProfileSearchComponent
+    {
+
+        public string QuestionID
+        {
+            get { return hidQuestionId.Value; }
+            set { hidQuestionId.Value = value; }
+        }
+
+        public ProfileQuestion Question
+        {
+            set
+            {
+                QuestionID = value.Id.ToString();
+
+                //ltrName.Text = Config.Misc.EnableProfileDataTranslation
+                //    ? Lang.Trans(value.AltName) : value.AltName;
+
+                ProfileChoice[] profileChoices = value.FetchChoices();
+                if (profileChoices != null)
+                {
+                    dropValues.Items.Add("");
+                    foreach (ProfileChoice choice in profileChoices)
+                    {
+                        if (Config.Misc.EnableProfileDataTranslation)
+                            dropValues.Items.Add(new ListItem(Lang.Trans(choice.Value), choice.Id.ToString()));
+                        else
+                            dropValues.Items.Add(
+                                new ListItem(choice.Value, choice.Id.ToString()));
+                    }
+                }
+            }
+        }
+
+        public ProfileAnswer[] Answers
+        {
+            get
+            {
+                var answer = new ProfileAnswer
+                {
+                    Question = ProfileQuestion.Fetch(Convert.ToInt32(QuestionID)),
+                    Value = dropValues.SelectedValue.Trim().Length > 0
+                                ? ProfileChoice.Fetch(Int32.Parse(dropValues.SelectedValue)).Value
+                                : String.Empty
+                };
+
+                if (answer.Value == "")
+                    return new ProfileAnswer[] { };
+                return new[] { answer };
+            }
+        }
+
+        public int[] ChoiceIds
+        {
+            get { return new[] { Convert.ToInt32(dropValues.SelectedValue) }; }
+            set
+            {
+                if (value.Length == 0) return;
+                foreach (int choiceId in value)
+                {
+                    ListItem item = dropValues.Items.FindByValue(choiceId.ToString());
+                    if (item != null)
+                    {
+                        dropValues.ClearSelection();
+                        item.Selected = true;
+                        //divExpandee.Style["display"] = ""; // Unhide
+                    }
+                }
+            }
+        }
+
+        public HtmlGenericControl UserControlPanel
+        {
+            get { return pnlID; }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // Put user code to initialize the page here
+        }
+
+        //public void GenerateJSForChildVisibility(Dictionary<string, object[]> dChildClientIDsWithParentQuestionChoices)
+        //{
+        //    bool translate = Config.Misc.EnableProfileDataTranslation;
+        //    string js = "javascript:";
+
+        //    foreach (var pair in dChildClientIDsWithParentQuestionChoices)
+        //    {
+        //        string childClientID = pair.Key;
+        //        var parentQuestionChoices = (string[])pair.Value[0];
+        //        var childQuestionsClientIDs = (List<string>)pair.Value[1];
+
+        //        js += "if(";
+        //        for (int i = 0; i < parentQuestionChoices.Length; i++)
+        //        {
+        //            string parentQuestionChoice = parentQuestionChoices[i];
+        //            if (translate)
+        //                parentQuestionChoice =
+        //                    parentQuestionChoices[i].Translate().Replace(@"\", @"\\").Replace("'", @"\'").
+        //                        Replace("\"", "\\\"");
+        //            js += "$('#'+this.id+' option:selected').text() == '" + parentQuestionChoice + "'" +
+        //                  (i == parentQuestionChoices.Length - 1 ? String.Empty : " || ");
+        //        }
+
+        //        js += ") {$get('" + childClientID + "').style.display = '';} else {$get('" + childClientID +
+        //              "').style.display = 'none';" + "Reset" + childClientID + "();";
+        //        foreach (string childQuestionClientID in childQuestionsClientIDs)
+        //        {
+        //            js += "$get('" + childQuestionClientID + "').style.display = 'none';" + "Reset" +
+        //                  childQuestionClientID + "();";
+        //        }
+
+        //        js += "}";
+        //    }
+
+
+        //    dropValues.Attributes.Add("onchange", js);
+        //}
+
+        //public void GenerateResetValuesJS()
+        //{
+        //    string js = "<script>";
+        //    js += "function Reset" + pnlID.ClientID + "()" +
+        //          "{" + "$get('" + dropValues.ClientID + "').selectedIndex = -1;}";
+        //    js += "</script>";
+
+        //    Page.ClientScript.RegisterStartupScript(GetType(), ID + "Reset", js);
+        //}
+
+        public void ClearAnswers()
+        {
+            dropValues.SelectedIndex = -1;
+        }
+
+        //protected override void OnPreRender(EventArgs e)
+        //{
+        //    // Unhide if something is chosen
+        //    divExpandee.Style["display"] = Answers.Length > 0 ? "" : "none";
+
+        //    base.OnPreRender(e);
+        //}
+
+    }
+
+}

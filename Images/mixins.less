@@ -1,0 +1,82 @@
+.default_hover(@a, @b, @c) {
+  .btn-default:hover,
+  .btn-default:focus,
+  .btn-default:active,
+  .btn-default.active,
+  .open .dropdown-toggle.btn-default {
+    background-color: @a;
+    border-color: @b;
+    color: @c;
+  }
+}
+.primary_hover(@a, @b, @c) {
+  .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:active,
+  .btn-primary.active,
+  .open .dropdown-toggle.btn-primary {
+    background-color: @a;
+    border-color: @b;
+    color: @c;
+  }
+}
+.secondary_hover(@a, @b, @c) {
+  .btn-secondary:hover,
+  .btn-secondary:focus,
+  .btn-secondary:active,
+  .btn-secondary.active,
+  .open .dropdown-toggle.btn-secondary {
+    background-color: @a;
+    border-color: @b;
+    color: @c;
+  }
+}
+.a_thumbnail(@a, @b, @c, @d) {
+  a.thumbnail {
+    border-color: @a;
+  }
+  a.thumbnail .caption {
+    color: @c;
+  }
+  a.thumbnail:hover,
+  a.thumbnail:focus,
+  a.thumbnail.active {
+    border-color: @b;
+  }
+  a.thumbnail:hover .caption,
+  a.thumbnail:focus .caption,
+  a.thumbnail.active .caption {
+    color: @d;
+  }
+}
+.form-control_focus(@a, @b) {
+  .form-control:focus {
+    border-color: @a;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), inset 0 0 8px @b;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), inset 0 0 8px @b;
+  }
+}
+.radius(@a) {
+  border-radius: @a;
+  -webkit-border-radius: @a;
+}
+.inputs_radius(@a) {
+  .input-group-addon,
+  .input-group-btn .btn,
+  .form-control {
+    .radius(@a)
+  }
+}
+.brand(@a) {
+  .navbar-default .navbar-toggle,
+  .navbar-default .navbar-toggle:active,
+  .navbar-default .navbar-toggle:focus,
+  .navbar-default .navbar-toggle:hover,
+  .navbar-default .navbar-toggle .text-muted,
+  .navbar-default .navbar-brand,
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus {
+    color: @a;
+  }
+}
+
