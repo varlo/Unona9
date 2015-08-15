@@ -45,10 +45,10 @@
                 }
 
                 function calculatePrice(words) {
-                    if (words > 10)
-                        document.getElementById('txtPrice').value = (Math.floor(words / 10) + 1) * 2;
+                    if (words > 100)
+                        document.getElementById('txtPrice').value = (Math.floor(words / 100) + 1) * <%=Config.Credits.CreditsForHundredWordsInMessageTranslation%>;
                     else
-                        document.getElementById('txtPrice').value = "2";
+                        document.getElementById('txtPrice').value = "<%=Config.Credits.CreditsForHundredWordsInMessageTranslation%>";
                 }
             </script>
             <div id="pnlSmilies" runat="server">
