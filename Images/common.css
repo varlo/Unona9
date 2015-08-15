@@ -1255,9 +1255,10 @@ div[id*="UpdateProgressMaster"] {
     }
 }
 /* end Fixes */
-
-
-
-
-
-
+.charcount {
+    width: 50px;
+    font-family: arial !important;
+    font-size: 14px;
+    line-height: 16px;
+    height: 16px;
+}

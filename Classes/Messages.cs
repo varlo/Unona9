@@ -677,8 +677,8 @@ namespace AspNetDating.Classes
             else
                 pendingApproval = false;
 
-            if (body.Length > 3500)
-                throw new ArgumentException(Lang.Trans("Your message is too long and cannot be delivered!"));
+            //if (body.Length > 3500)
+            //    throw new ArgumentException(Lang.Trans("Your message is too long and cannot be delivered!"));
                 
             using (SqlConnection conn = Config.DB.Open())
             {

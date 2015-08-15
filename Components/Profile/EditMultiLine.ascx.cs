@@ -170,12 +170,12 @@ namespace AspNetDating.Components.Profile
         {
             if (!Page.ClientScript.IsClientScriptBlockRegistered("LettersCounter"))
             {
-                string jsscript = "<SCRIPT LANGUAGE=\"JavaScript\">" +
-                                  "function textCounter(fieldId, cntfieldId) {" +
-                                  "document.getElementById(cntfieldId).value = document.getElementById(fieldId).value.length;" +
-                                  "}" +
-                                  "//  End -->" +
-                                  "</SCRIPT>";
+                const string jsscript = "<SCRIPT LANGUAGE=\"JavaScript\">" +
+                                        "function textCounter(fieldId, cntfieldId) { " +
+                                        "document.getElementById(cntfieldId).value = document.getElementById(fieldId).value.length;" +
+                                        "}" +
+                                        "//  End -->" +
+                                        "</SCRIPT>";
 
                 Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "LettersCounter", jsscript);
             }

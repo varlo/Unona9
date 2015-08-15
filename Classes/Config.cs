@@ -836,6 +836,13 @@ namespace AspNetDating.Classes
                 get { return DBSettings.Get("Credits_VideoStreamUnlockPeriod", 1.0); }
                 set { DBSettings.Set("Credits_VideoStreamUnlockPeriod", value); }
             }
+
+            [Reflection.DescriptionAttribute("Credits for 100 words in message translation")]
+            public static int CreditsForHundredWordsInMessageTranslation
+            {
+                get { return DBSettings.Get("Credits_CreditsForHundredWordsInMessageTranslation", 2); }
+                set { DBSettings.Set("Credits_CreditsForHundredWordsInMessageTranslation", value); }
+            }
         }
 
         #endregion

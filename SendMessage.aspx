@@ -29,6 +29,28 @@
         </ul>
         <components:BannerView id="bvSendMessageRight" runat="server" Key="SendMessageRight"/>
         <div id="pnlUserResponse" runat="server">
+            <script type="text/javascript">
+                function textCounter(fieldId, cntfieldId) {
+                    document.getElementById(cntfieldId).value = document.getElementById(fieldId).value.length;
+                }
+
+                function wordCounter(fieldId, cntfieldId) {
+                    var s = document.getElementById(fieldId).value;
+                    s = s.replace(/(^\s*)|(\s*$)/gi, "");
+                    s = s.replace(/[ ]{2,}/gi, " ");
+                    s = s.replace(/\n /, "\n");
+                    var words = s.split(' ').length;
+                    document.getElementById(cntfieldId).value = words;
+                    calculatePrice(words);
+                }
+
+                function calculatePrice(words) {
+                    if (words > 10)
+                        document.getElementById('txtPrice').value = (Math.floor(words / 10) + 1) * 2;
+                    else
+                        document.getElementById('txtPrice').value = "2";
+                }
+            </script>
             <div id="pnlSmilies" runat="server">
                 <script language="JavaScript" type="text/javascript">
                         <!--
@@ -70,7 +92,10 @@
                     </tr>
                 </table>
             </div>
-            <asp:TextBox ID="txtMessageBody" CssClass="form-control" Rows="7" runat="server" TextMode="MultiLine"/>
+            <asp:TextBox ID="txtMessageBody" CssClass="form-control" Rows="7" runat="server" TextMode="MultiLine" onkeydown="textCounter(this.id, 'txtCharCount');wordCounter(this.id, 'txtWordCount')" onkeyup="textCounter(this, 'txtCharCount');wordCounter(this, 'txtWordCount')" />
+            <input name="txtCharCount" type="text" value="0" readonly="readonly" id="txtCharCount" class="charcount">chars&nbsp;
+            <input name="txtWordCount" type="text" value="0" readonly="readonly" id="txtWordCount" class="charcount">words&nbsp;
+            <input name="txtPrice" type="text" value="0" readonly="readonly" id="txtPrice" class="charcount">credits
         </div>
         <div class="actions">
             <asp:Button CssClass="btn btn-default" ID="btnSend" runat="server"/>

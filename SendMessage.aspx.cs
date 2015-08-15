@@ -14,6 +14,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web.UI;
@@ -654,10 +655,12 @@ namespace AspNetDating
                 //    if (!Config.Users.FreeForFemales || 
                 //        CurrentUserSession.Gender != Classes.User.eGender.Female)
                 //    {
+                shouldPayWithCredits = true;
                 if (shouldPayWithCredits)
                 {
                     int creditsLeft = fromUser.Credits - CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits; //Config.Credits.CreditsPerMessage;
-
+                    int price = CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits;
+                    Int32.TryParse(Request["txtPrice"], out price);
                     if (!Config.Credits.ChargeOneTimePerMember) // charge every time
                     {
                         if (creditsLeft < 0)
@@ -667,7 +670,7 @@ namespace AspNetDating
                             return;
                         }
 
-                        fromUser.Credits -= CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits; //Config.Credits.CreditsPerMessage;
+                        fromUser.Credits -= price; //CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits; //Config.Credits.CreditsPerMessage;
                         fromUser.Update(true);
                         CurrentUserSession.Credits = fromUser.Credits;
                     }
@@ -685,7 +688,7 @@ namespace AspNetDating
 
                                 establishedCommunication.Save();
 
-                                fromUser.Credits -= CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits;
+                                fromUser.Credits -= price; //CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits;
                                 fromUser.Update(true);
                                 CurrentUserSession.Credits = fromUser.Credits;
                             }
