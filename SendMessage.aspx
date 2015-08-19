@@ -9,30 +9,32 @@
 <%@ Register TagPrefix="uc1" TagName="SmallBoxEnd" Src="Components/SmallBoxEnd.ascx" %>
 <%@ MasterType TypeName="AspNetDating.Site" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphContent" runat="server">
-<%@ Register TagPrefix="components" Namespace="AspNetDating.Components" Assembly="AspNetDating" %>
+    <%@ Register TagPrefix="components" Namespace="AspNetDating.Components" Assembly="AspNetDating" %>
     <aside>
-        <uc1:SmallBoxStart ID="SmallBoxStart1" runat="server"/>
+        <uc1:SmallBoxStart ID="SmallBoxStart1" runat="server" />
         <div class="SideMenuItem">
             <asp:LinkButton ID="lnkBack" runat="server" />
         </div>
-        <uc1:SmallBoxEnd ID="SmallBoxEnd1" runat="server"/>
+        <uc1:SmallBoxEnd ID="SmallBoxEnd1" runat="server" />
     </aside>
     <article>
-        <uc1:LargeBoxStart ID="LargeBoxStart1" runat="server"/>
+        <uc1:LargeBoxStart ID="LargeBoxStart1" runat="server" />
         <!--<asp:Literal ID="ltrPhoto" runat="server"/>-->
         <ul class="info-header">
             <li>
-                <a class="tooltip-link" title="<%= Lang.Trans("From") %>"><b><asp:Label ID="lblFromUsername" runat="server"/></b></a>
+                <a class="tooltip-link" title="<%= Lang.Trans("From") %>"><b>
+                    <asp:Label ID="lblFromUsername" runat="server" /></b></a>
                 &nbsp;<i class="fa fa-comments-o"></i>&nbsp;
-                <a class="tooltip-link" title="<%= Lang.Trans("To") %>"><b><asp:Label ID="lblToUsername" runat="server"/></b></a>
+                <a class="tooltip-link" title="<%= Lang.Trans("To") %>"><b>
+                    <asp:Label ID="lblToUsername" runat="server" /></b></a>
             </li>
         </ul>
-        <components:BannerView id="bvSendMessageRight" runat="server" Key="SendMessageRight"/>
+        <components:BannerView ID="bvSendMessageRight" runat="server" Key="SendMessageRight" />
         <div id="pnlUserResponse" runat="server">
             <script type="text/javascript">
-                function textCounter(fieldId, cntfieldId) {
-                    document.getElementById(cntfieldId).value = document.getElementById(fieldId).value.length;
-                }
+                //function textCounter(fieldId, cntfieldId) {
+                //    document.getElementById(cntfieldId).value = document.getElementById(fieldId).value.length;
+                //}
 
                 function wordCounter(fieldId, cntfieldId) {
                     var s = document.getElementById(fieldId).value;
@@ -54,16 +56,16 @@
             <div id="pnlSmilies" runat="server">
                 <script language="JavaScript" type="text/javascript">
                         <!--
-                        function insertSmiley(text) {
-                            var area = document.forms[0].<%= MessageBodyClientId %>;
+    function insertSmiley(text) {
+        var area = document.forms[0].<%= MessageBodyClientId %>;
                             area.focus();
-                            if (document.selection)
-                                document.selection.createRange().text = text;
-                            else
-                                area.value += text;
-                            return false;
-                        }
-                        //-->
+        if (document.selection)
+            document.selection.createRange().text = text;
+        else
+            area.value += text;
+        return false;
+    }
+    //-->
                 </script>
 
                 <table class="table">
@@ -76,7 +78,8 @@
                                 <ContentTemplate>
                                     <asp:DataList ID="dlSmilies" SkinID="Smilies" RepeatLayout="Flow" RepeatDirection="Horizontal" runat="server">
                                         <ItemTemplate>
-                                            <a href="#" onclick="return insertSmiley('<%# Eval("Key") %>')"><img src="<%# Eval("Image") %>" title="<%# Eval("Description") %>" /></a>
+                                            <a href="#" onclick="return insertSmiley('<%# Eval("Key") %>')">
+                                                <img src="<%# Eval("Image") %>" title="<%# Eval("Description") %>" /></a>
                                         </ItemTemplate>
                                     </asp:DataList>
                                 </ContentTemplate>
@@ -92,18 +95,22 @@
                     </tr>
                 </table>
             </div>
-            <asp:TextBox ID="txtMessageBody" CssClass="form-control" Rows="7" runat="server" TextMode="MultiLine" onkeydown="textCounter(this.id, 'txtCharCount');wordCounter(this.id, 'txtWordCount')" onkeyup="textCounter(this, 'txtCharCount');wordCounter(this, 'txtWordCount')" />
-            <input name="txtCharCount" type="text" value="0" readonly="readonly" id="txtCharCount" class="charcount">chars&nbsp;
-            <input name="txtWordCount" type="text" value="0" readonly="readonly" id="txtWordCount" class="charcount">words&nbsp;
-            <input name="txtPrice" type="text" value="0" readonly="readonly" id="txtPrice" class="charcount">credits
+            <asp:TextBox ID="txtMessageBody" CssClass="form-control" Rows="7" runat="server" TextMode="MultiLine" onkeydown="wordCounter(this.id, 'txtWordCount')" onkeyup="wordCounter(this, 'txtWordCount')" />
+            <div id="divPricing" runat="server">
+                <input name="txtWordCount" type="text" value="0" readonly="readonly" id="txtWordCount" class="charcount">words&nbsp;
+                <input name="txtPrice" type="text" value="0" readonly="readonly" id="txtPrice" class="charcount">credits
+            </div>
         </div>
         <div class="actions">
-            <asp:Button CssClass="btn btn-default" ID="btnSend" runat="server"/>
+            <asp:Button ID="btnSendWithTranslation" CssClass="btn btn-default" runat="server"></asp:Button>
+            <asp:Button ID="btnSendWithoutTranslation" CssClass="btn btn-default" runat="server"></asp:Button>
         </div>
         <div id="pnlPreviousMessages" visible="false" runat="server">
             <hr />
             <asp:Repeater ID="rptPreviousMessages" runat="server">
-                <HeaderTemplate><ul class="list-group list-group-striped"></HeaderTemplate>
+                <HeaderTemplate>
+                    <ul class="list-group list-group-striped">
+                </HeaderTemplate>
                 <ItemTemplate>
                     <li class="list-group-item">
                         <b><%# Eval("Username") %></b>
@@ -113,6 +120,6 @@
                 <FooterTemplate></ul></FooterTemplate>
             </asp:Repeater>
         </div>
-        <uc1:LargeBoxEnd ID="LargeBoxEnd1" runat="server"/>
+        <uc1:LargeBoxEnd ID="LargeBoxEnd1" runat="server" />
     </article>
 </asp:Content>

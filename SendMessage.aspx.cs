@@ -11,14 +11,11 @@
  * This notice may not be removed from the source code. 
  */
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using AspNetDating.Classes;
 using AspNetDating.Components;
@@ -46,7 +43,7 @@ namespace AspNetDating
             }
             get
             {
-                return (int) (ViewState["CurrentSmiliesPage"] ?? 0);
+                return (int)(ViewState["CurrentSmiliesPage"] ?? 0);
             }
         }
 
@@ -83,7 +80,7 @@ namespace AspNetDating
                                      smiley.Key, Config.Urls.Home + "/Smilies/" + smiley.Image,
                                      smiley.Description, smiley.Secondary
                                  };
-                
+
                 dtSmilies.Rows.Add(row);
             }
 
@@ -179,7 +176,7 @@ namespace AspNetDating
             #region checkContactedUsersLimitReached
 
             List<string> uniqueUsers = new List<string>();
-            
+
             foreach (Message message in messages)
                 AddUniqueItems(uniqueUsers, message.ToUser.Username);
 
@@ -223,7 +220,7 @@ namespace AspNetDating
         //    foreach (string response in responses)
         //        dropPreWrittenResponses.Items.Add(response);
         //}
-        
+
         //private void PopulatePrewrittenMessagesDropDown()
         //{
         //    MiscTemplates.PreWrittenMessageResponses prewrittenMessageResponsesTemplate =
@@ -254,7 +251,8 @@ namespace AspNetDating
         private void InitializeComponent()
         {
             this.lnkBack.Click += new EventHandler(this.lnkBack_Click);
-            this.btnSend.Click += new EventHandler(this.btnSend_Click);
+            this.btnSendWithoutTranslation.Click += new EventHandler(this.btnSendWithoutTranslation_Click);
+            this.btnSendWithTranslation.Click += new EventHandler(this.btnSendWithTranslation_Click);
         }
 
         #endregion
@@ -263,8 +261,15 @@ namespace AspNetDating
         {
             SmallBoxStart1.Title = Lang.Trans("Actions");
             LargeBoxStart1.Title = Lang.Trans("Message");
-            btnSend.Text = Lang.Trans("Send Message");
+            btnSendWithTranslation.Text = Lang.Trans("Send with translation and forwarding");
+            btnSendWithoutTranslation.Text = Lang.Trans("Send without translation");
             //lnkUpgradeNow.Text = Lang.Trans("Upgrade Now to Respond to this email");
+            if (CurrentUserSession.Gender == Classes.User.eGender.Female)
+            {
+                btnSendWithoutTranslation.Text = Lang.Trans("Send message");
+                btnSendWithTranslation.Visible = false;
+                divPricing.Visible = false;
+            }
 
             if (Request.Params["src"] != null && Request.Params["src"] == "message")
             {
@@ -289,7 +294,7 @@ namespace AspNetDating
             else if (Request.Params["src"] == "search")
             {
                 lnkBack.Text = Lang.Trans("Back to Search");
-                lnkBack.CommandArgument = "search";                
+                lnkBack.CommandArgument = "search";
             }
         }
 
@@ -311,7 +316,7 @@ namespace AspNetDating
                 toUser = Classes.User.Load(toUsername);
                 if (toUser.Deleted)
                 {
-                    ((PageBase) Page).StatusPageMessage = Lang.Trans("The user no longer exists");
+                    ((PageBase)Page).StatusPageMessage = Lang.Trans("The user no longer exists");
                     Response.Redirect("~/ShowStatus.aspx");
                     return;
                 }
@@ -343,7 +348,7 @@ namespace AspNetDating
             {
                 fromUser = Classes.User.Load(CurrentUserSession.Username);
             }
-            catch(NotFoundException)
+            catch (NotFoundException)
             {
                 Response.Redirect("~/Default.aspx");
                 return;
@@ -376,7 +381,7 @@ namespace AspNetDating
             //{
             //    ddPrewrittenMessages.Visible = false;
             //}
-            
+
             string toUsername = Request.Params["to_user"];
 
             bool shouldPayWithCredits;
@@ -384,7 +389,7 @@ namespace AspNetDating
 
             if (shouldPayWithCredits)
             {
-                btnSend.OnClientClick =
+                btnSendWithTranslation.OnClientClick =
                     String.Format("return confirm(\"" + "Sending this message will subtract {0} credits from your balance.".Translate() + "\");",
                         CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits);
             }
@@ -433,9 +438,9 @@ namespace AspNetDating
             {
                 ((PageBase)Page).StatusPageMessage = Lang.Trans("The user no longer exists");
                 Response.Redirect("~/ShowStatus.aspx");
-            
+
             }
-            
+
             Photo primaryPhoto = null;
             try
             {
@@ -449,14 +454,14 @@ namespace AspNetDating
                 Log(err);
             }
 
-          /*  if (primaryPhoto == null || !primaryPhoto.Approved)
-            {
-                ltrPhoto.Text = ImageHandler.RenderImageTag(toUser.Gender, 50, 50, "photoframe", false, true);
-            }
-            else
-            {
-                ltrPhoto.Text = ImageHandler.RenderImageTag(primaryPhoto.Id, 50, 50, "photoframe", false, true);
-            }*/
+            /*  if (primaryPhoto == null || !primaryPhoto.Approved)
+              {
+                  ltrPhoto.Text = ImageHandler.RenderImageTag(toUser.Gender, 50, 50, "photoframe", false, true);
+              }
+              else
+              {
+                  ltrPhoto.Text = ImageHandler.RenderImageTag(primaryPhoto.Id, 50, 50, "photoframe", false, true);
+              }*/
 
             lblFromUsername.Text = CurrentUserSession.Username;
             lblToUsername.Text = toUser.Username;
@@ -513,7 +518,7 @@ namespace AspNetDating
                     body = body.Replace("\n", "<br>");
                     Smilies.Process(ref body);
 
-                    dtPrevMessages.Rows.Add(new object[] {message.fromUsername, body});
+                    dtPrevMessages.Rows.Add(new object[] { message.fromUsername, body });
 
                     messageId = message.RepliedTo;
                 }
@@ -540,7 +545,7 @@ namespace AspNetDating
                                + @"((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
                                + @"\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+"
                                + @"[a-zA-Z]{2,}))";
-            
+
             return Regex.Replace(input, pattern, replacement);
         }
 
@@ -558,7 +563,7 @@ namespace AspNetDating
                                 @"((\(\d{3}\) ?)|(\d{3}[- \.]))?\d{3}[- \.]\d{4}(\s(x\d+)?){0,1}", //Matches: (123) 456-7890|||(123) 456-7890 x123
                                 @"(\(\d{3}\)[- ]?|\d{3}[- ])?\d{3}[- ]\d{4}"                       //Matches: (555)555-5555|||(555) 555-5555|||555-5555
                                 };
-            
+
             foreach (string pattern in patterns)
             {
                 result = Regex.Replace(result, pattern, replacement);
@@ -566,12 +571,12 @@ namespace AspNetDating
 
             return result;
         }
-        
-        private void btnSend_Click(object sender, EventArgs e)
+
+        private void SendMessageToUser(bool isTranslated = false)
         {
             #region Check can current user send message
 
-            Classes.User toUser = null;
+            User toUser = null;
             User fromUser = null;
             try
             {
@@ -600,7 +605,7 @@ namespace AspNetDating
 
             try
             {
-                var toUsername = (string) ViewState["SendMessage_ToUsername"];
+                var toUsername = (string)ViewState["SendMessage_ToUsername"];
 
                 if (Classes.User.IsUserBlocked(toUsername, CurrentUserSession.Username))
                 {
@@ -612,17 +617,17 @@ namespace AspNetDating
 
                 var msg = new Message(CurrentUserSession.Username,
                                           toUsername)
-                              {
-                                  Body =
-                                      (Config.Misc.EnableBadWordsFilterMessage
-                                           ? Parsers.ProcessBadWords(txtMessageBody.Text.Trim())
-                                           : txtMessageBody.Text.Trim())
-                              };
+                {
+                    Body =
+                        (Config.Misc.EnableBadWordsFilterMessage
+                             ? Parsers.ProcessBadWords(txtMessageBody.Text.Trim())
+                             : txtMessageBody.Text.Trim())
+                };
 
                 if (Config.Misc.EnableMessageFilter)
                 {
                     msg.Body = ReplaceEmail(msg.Body, "***");
-                    msg.Body = ReplacePhone(msg.Body, "***");    
+                    msg.Body = ReplacePhone(msg.Body, "***");
                 }
 
                 //if (pnlPreWrittenResponse != null && pnlPreWrittenResponse.Visible)
@@ -656,11 +661,12 @@ namespace AspNetDating
                 //        CurrentUserSession.Gender != Classes.User.eGender.Female)
                 //    {
                 shouldPayWithCredits = true;
-                if (shouldPayWithCredits)
+                if (shouldPayWithCredits && CurrentUserSession.Gender == Classes.User.eGender.Male)
                 {
                     int creditsLeft = fromUser.Credits - CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits; //Config.Credits.CreditsPerMessage;
                     int price = CurrentUserSession.BillingPlanOptions.MaxMessagesPerDay.Credits;
-                    Int32.TryParse(Request["txtPrice"], out price);
+                    if (isTranslated)
+                        Int32.TryParse(Request["txtPrice"], out price);
                     if (!Config.Credits.ChargeOneTimePerMember) // charge every time
                     {
                         if (creditsLeft < 0)
@@ -713,7 +719,7 @@ namespace AspNetDating
                                 "This account is flagged for review! You will not be able to send messages untill the review is completed!");
                         Response.Redirect("ShowStatus.aspx");
                         return;
-                    } 
+                    }
 
                     string message = Regex.Replace(msg.Body, @"[^\w]*", "").ToLower();
 
@@ -770,12 +776,22 @@ namespace AspNetDating
             Response.Redirect("ShowStatus.aspx");
         }
 
+        private void btnSendWithoutTranslation_Click(object sender, EventArgs e)
+        {
+            SendMessageToUser();
+        }
+
+        private void btnSendWithTranslation_Click(object sender, EventArgs e)
+        {
+            SendMessageToUser(true);
+        }
+
         private void lnkBack_Click(object sender, EventArgs e)
         {
             switch (lnkBack.CommandArgument)
             {
                 case "profile":
-                    Response.Redirect(UrlRewrite.CreateShowUserUrl((string)ViewState["SendMessage_ToUsername"])); 
+                    Response.Redirect(UrlRewrite.CreateShowUserUrl((string)ViewState["SendMessage_ToUsername"]));
                     break;
                 case "favorites":
                     Response.Redirect("~/Favorites.aspx");

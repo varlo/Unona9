@@ -121,13 +121,31 @@ namespace AspNetDating {
         protected global::System.Web.UI.WebControls.TextBox txtMessageBody;
         
         /// <summary>
-        /// btnSend control.
+        /// divPricing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSend;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPricing;
+        
+        /// <summary>
+        /// btnSendWithTranslation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSendWithTranslation;
+        
+        /// <summary>
+        /// btnSendWithoutTranslation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSendWithoutTranslation;
         
         /// <summary>
         /// pnlPreviousMessages control.
