@@ -20,6 +20,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using AspNetDating.Classes;
 using eStreamBG.Dating;
+using PayPal.Web.Controls;
 
 namespace AspNetDating
 {
@@ -314,6 +315,15 @@ namespace AspNetDating
         public static int GetLanguageId()
         {
             HttpContext ctx = HttpContext.Current;
+            if (ctx.Request.UserLanguages != null)
+            {
+                foreach (var userLanguage in ctx.Request.UserLanguages)
+                {
+                    if (userLanguage.Contains("en")) return 1;
+                    if (userLanguage.Contains("fr")) return 2;
+                    if (userLanguage.Contains("ru")) return 6;
+                }
+            }
             if (ctx.Session["LanguageId"] == null)
             {
                 int languageId = Config.Misc.DefaultLanguageId;
@@ -327,7 +337,6 @@ namespace AspNetDating
                 else
                 {
                     var languages = new List<Language>(Language.FetchAll());
-
                     string userCountry = IPToCountry.GetCountry(ctx.Request.UserHostAddress) ?? String.Empty;
                     string userCountryByCode = Config.Users.GetCountryByCode(userCountry) ?? String.Empty;
                     string[] userLanguages = ctx.Request.UserLanguages ?? new string[0];
