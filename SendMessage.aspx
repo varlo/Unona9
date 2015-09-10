@@ -102,8 +102,8 @@
             </div>
         </div>
         <div class="actions">
-            <asp:Button ID="btnSendWithTranslation" CssClass="btn btn-default" runat="server"></asp:Button>
-            <asp:Button ID="btnSendWithoutTranslation" CssClass="btn btn-default" runat="server"></asp:Button>
+            <asp:Button ID="btnSendWithTranslation" CssClass="btn btn-default" runat="server" OnClientClick="return confirm('Sending this message will subtract ' + document.getElementById('txtPrice').value + ' credits from your balance.')"></asp:Button>
+            <asp:Button ID="btnSendWithoutTranslation" CssClass="btn btn-default" runat="server" OnClientClick="return confirm('Sending this message will subtract 1 credit from your balance.')"></asp:Button>
         </div>
         <div id="pnlPreviousMessages" visible="false" runat="server">
             <hr />
