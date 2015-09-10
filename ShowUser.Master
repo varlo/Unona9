@@ -21,9 +21,12 @@
             <li><a id="lnkViewVideos" enableviewstate="false" runat="server" href="BrowseVideos.aspx"><%= "View Videos".Translate() %></a></li>
             <li id="pnlBlog" runat="server"><a id="lnkViewBlog" enableviewstate="false" runat="server"><%= "View Blog".Translate() %></a></li>
             <li id="pnlViewEvents" runat="server"><a id="lnkViewEvents" enableviewstate="false" visible="False" runat="server"><%= "View Events".Translate() %></a></li>
+            <li>
+                <asp:LinkButton ID="lnkShowInterest" EnableViewState="false" Runat="server" OnClick="lnkShowInterest_Click" />
+            </li>
             <li><a id="lnkSendMessage" enableviewstate="false" runat="server"><%= "Send Message".Translate() %></a></li>
             <li id="pnlSendEcard" runat="server"><a id="lnkSendEcard" enableviewstate="false" runat="server"><%= "Send e-card".Translate() %></a></li>
-            <li><a id="lnkSendFlowers" enableviewstate="false" runat="server" href="http://www.UkraineGiftDelivery.com"><%= "Send Flowers".Translate() %></a></li>
+            <li><a id="lnkSendFlowers" enableviewstate="false" runat="server" href="http://www.UkraineGiftDelivery.com" target="blank"><%= "Send Flowers".Translate() %></a></li>
             <li><a id="lnkSendToFriend" enableviewstate="false" runat="server"><%= "Send this profile to a friend".Translate() %></a></li>
             <li id="pnlAddToFavourites" runat="server"><a id="lnkAddToFavourites" enableviewstate="false" runat="server"><%= "Add to Favorites".Translate() %></a></li>
             <li id="pnlRemoveFromFavourites" runat="server"><a id="lnkRemoveFromFavourites" enableviewstate="false" runat="server"><%= "Remove from Favorites".Translate() %></a></li>

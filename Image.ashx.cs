@@ -632,5 +632,39 @@ namespace AspNetDating
                 File.Delete(file);
             }
         }
+
+        public static string RenderImageTagUsername(string username, int width, int height, string cssClass, bool useCache, bool diskCache, bool findFace)
+        {
+            User user;
+            int imageId;
+            try
+            {
+                user = User.Load(username);
+            }
+            catch (NotFoundException) { return ""; }
+
+            Photo photo = null;
+            try
+            {
+                photo = user.GetPrimaryPhoto();
+            }
+            catch (NotFoundException)
+            {
+                //                return "";
+            }
+
+            if (photo == null || !photo.Approved)
+            {
+                imageId = GetPhotoIdByGender(user.Gender);
+            }
+            else
+            {
+                imageId = photo.Id;
+            }
+
+            string imageUrl = CreateImageUrl(imageId, width, height, useCache, diskCache, findFace);
+            string imageTag = String.Format("<img src=\"{0}\" alt=\"photo\" class=\"{1}\" border=\"0\" />", imageUrl, cssClass);
+            return imageTag;
+        }
     }
 }

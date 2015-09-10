@@ -527,16 +527,17 @@ namespace AspNetDating
 
             #endregion
 
-            PrepareLinks();            
+            PrepareLinks();
         }
 
         private void SetSimilarProfilesProperties()
         {
             SimilarProfiles1.Visible = Config.Profiles.EnableSimilarProfiles;
 
-            if (SimilarProfiles1.Visible) {
+            if (SimilarProfiles1.Visible)
+            {
                 SimilarProfiles1.ViewedUser = ViewedUser;
-            }            
+            }
         }
 
         private void LoadStrings()
@@ -581,13 +582,13 @@ namespace AspNetDating
             else
             {
                 var canSendResult = CurrentUserSession.CanSendEcards();
-                
+
                 if (canSendResult == PermissionCheckResult.No)
                     pnlSendEcard.Visible = false;
                 else
                     lnkSendEcard.HRef = "SendEcard.aspx?uid=" + ViewedUser.Username;
 
-                lnkSendMessage.HRef = "SendMessage.aspx?to_user=" + ViewedUser.Username + "&src=profile";                
+                lnkSendMessage.HRef = "SendMessage.aspx?to_user=" + ViewedUser.Username + "&src=profile";
             }
 
             lnkSendToFriend.HRef = "SendProfile.aspx?uid=" + ViewedUser.Username;
@@ -626,6 +627,7 @@ namespace AspNetDating
             lnkCertifyUserIsGenuine.Text = Lang.Trans("Certify that this user is Genuine");
             lnkRemoveVerifiedUserStatus.Text = Lang.Trans("Remove \"Certified\" status");
             lnkViewMutualFriends.Text = "View mutual friends".Translate();
+            lnkShowInterest.Text = Lang.Trans("Show Interest");
         }
 
         #region Nested type: Parser
@@ -641,62 +643,35 @@ namespace AspNetDating
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         protected void lnkShowInterest_Click(object sender, EventArgs e)
         {
-            //            if (CurrentUserSession == null)
-            //                Response.Redirect("~/Login.aspx");
-            //
-            //            try
-            //            {
-            //                bool sent = Interest.Send(CurrentUserSession.Username, ViewedUser.Username);
-            //
-            //                if (sent)
-            //                {
-            //                    Page.StatusPageMessage = String.Format("{0} will now be informed that you have shown interest in their profile.".Translate(), 
-            //                        ViewedUser.Username);
-            //
-            //                    #region Add NewInterest Event
-            //
-            //                    Event[] evt = Event.Fetch(ViewedUser.Username, null, Event.eType.NewInterest, DateTime.Now.Date);
-            //
-            //                    if (evt.Length > 0)
-            //                    {
-            //                        NewInterest newInterest =
-            //                            Misc.FromXml<NewInterest>(evt[0].DetailsXML);
-            //                        if (!newInterest.Usernames.Contains(CurrentUserSession.Username))
-            //                        {
-            //                            newInterest.Usernames.Add(CurrentUserSession.Username);
-            //                            evt[0].DetailsXML = Misc.ToXml(newInterest);
-            //                            evt[0].Save();
-            //                        }
-            //                    }
-            //                    else
-            //                    {
-            //                        Event newEvent = new Event(ViewedUser.Username);
-            //
-            //                        newEvent.Type = Event.eType.NewInterest;
-            //                        NewInterest newInterest = new NewInterest();
-            //                        newInterest.Usernames.Add(CurrentUserSession.Username);
-            //                        newEvent.DetailsXML = Misc.ToXml(newInterest);
-            //
-            //                        newEvent.Save();
-            //                    }
-            //
-            //                    #endregion
-            //                }
-            //                else
-            //                {
-            //                    Page.StatusPageMessage = String.Format("You have already shown interest in {0}".Translate(), 
-            //                        ViewedUser.Username);
-            //                }
-            //            }
-            //            catch (NotFoundException)
-            //            {
-            //                Page.StatusPageMessage = "The user no longer exists!".Translate();
-            //            }
-            //
-            //            Page.StatusPageLinkText = "Back to profile".Translate();
-            //            Page.StatusPageLinkURL = UrlRewrite.CreateShowUserUrl(ViewedUser.Username);
-            //
-            //            Response.Redirect("ShowStatus.aspx");
+            string message = String.Empty, script = String.Empty;
+            lnkShowInterest.Enabled = false;
+
+            if (CurrentUserSession == null)
+                Response.Redirect("~/Login.aspx");
+
+            bool sent;
+            try
+            {
+                sent = Interest.Send(CurrentUserSession.Username, ViewedUser.Username);
+            }
+            catch (NotFoundException)
+            {
+                message = Lang.Trans("The user no longer exists!");
+                script = String.Format("javascript: alert('{0}');", message);
+                ScriptManager.RegisterStartupScript(Page, typeof(Page), "intereset_message", script, true);
+                return;
+            }
+
+            if (sent)
+            {
+                message = ViewedUser.Username + " " + Lang.Trans("will now be informed that you have shown interest in their profile.");
+            }
+            else
+            {
+                message = Lang.Trans("You have already shown interest in") + " " + ViewedUser.Username;
+            }
+            script = String.Format("javascript: alert('{0}');", message);
+            ScriptManager.RegisterStartupScript(Page, typeof(Page), "intereset_message", script, true);
         }
 
         /// <summary>
