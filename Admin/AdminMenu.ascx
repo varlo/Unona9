@@ -33,6 +33,7 @@
                     <li id="pnlSpamCheck" runat="server"><a href="SpamCheck.aspx"><%= Lang.TransA("Spam Check") %></a></li>
                     <li id="pnlAbuseReports" runat="server"><a href="AbuseReports.aspx"><%= Lang.TransA("Abuse Reports") %></a></li>
                     <li><a href="ManageUserLevels.aspx"><%= Lang.TransA("User Levels") %></a></li>
+                    <li><a href="CreditsHistory.aspx"><%= Lang.TransA("Credits History") %></a></li>
                 </ul>
             </div>
         </div>

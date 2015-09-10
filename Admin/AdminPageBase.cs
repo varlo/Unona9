@@ -125,6 +125,17 @@ namespace AspNetDating.Admin
             return CurrentAdminSession.IsAuthorized;
         }
 
+        /// <summary>
+        /// Determines whether this instance is admin.
+        /// </summary>
+        /// <returns>
+        /// 	<c>true</c> if this instance is admin; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsAdmin()
+        {
+            return CurrentAdminSession.Username == Config.Users.SystemUsername;
+        }
+
         public void Log(Exception ex)
         {
             ExceptionLogger.Log(Request, ex);

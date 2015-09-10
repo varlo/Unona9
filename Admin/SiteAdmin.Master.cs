@@ -41,6 +41,7 @@ namespace AspNetDating.Admin
                     case "manageuserlevels":
                     case "manageuser":
                     case "editprofile":
+                    case "creditshistory":
                         return "user-management";
                     case "managecontests":
                     case "contestentries":
