@@ -13,8 +13,6 @@
 using System;
 using AspNetDating.Classes;
 using AspNetDating.Components;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 
 namespace AspNetDating
 {
@@ -54,6 +52,10 @@ namespace AspNetDating
                         lnkSettings_Click(null, null);
                         Master.SetSelectedLink(lnkSettings.ClientID);
                         break;
+                    case "credits":
+                        lnkCreditHistory_Click(null, null);
+                        Master.SetSelectedLink(lnkCreditHistory.ClientID);
+                        break;
                     case "privacy":
                         lnkPrivacySettings_Click(null, null);
                         Master.SetSelectedLink(lnkPrivacySettings.ClientID);
@@ -90,6 +92,7 @@ namespace AspNetDating
             Settings1.User = CurrentUserSession;
             Billing1.User = CurrentUserSession;
             EditSkin1.User = CurrentUserSession;
+            CreditHistory1.User = CurrentUserSession;
         }
 
         private void LoadStrings()
@@ -100,6 +103,7 @@ namespace AspNetDating
             lnkUploadSalutePhoto.Text = Lang.Trans("Upload Salute Photo");
             lnkViewPhotos.Text = Lang.Trans("View Photos");
             lnkViewEvents.Text = Lang.Trans("View Events");
+            lnkCreditHistory.Text = "Credits History".Translate();
             lnkPrivacySettings.Text = "Privacy Settings".Translate();
             lnkSettings.Text = Lang.Trans("Settings");
             lnkEditSkin.Text = Lang.Trans("Edit Skin");
@@ -149,6 +153,7 @@ namespace AspNetDating
             UploadAudio1.Visible = false;
             PrivacySettings1.Visible = false;
             Settings1.Visible = false;
+            CreditHistory1.Visible = false;
             ViewPhotos1.Visible = false;
             ViewEvents1.Visible = false;
             ViewProfile1.Visible = false;
@@ -199,7 +204,6 @@ namespace AspNetDating
             UploadVideo1.InitControl();
         }
 
-
         protected void lnkUploadAudio_Click(object sender, EventArgs e)
         {
             HideControls();
@@ -210,6 +214,12 @@ namespace AspNetDating
         {
             HideControls();
             EditSkin1.Visible = true;
+        }
+
+        protected void lnkCreditHistory_Click(object sender, EventArgs e)
+        {
+            HideControls();
+            CreditHistory1.Visible = true;
         }
 
         protected void lnkPrivacySettings_Click(object sender, EventArgs e)

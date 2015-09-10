@@ -166,6 +166,7 @@
     <Content Include="Admin\BrowseAdmins.aspx" />
     <Content Include="Admin\BrowseAffiliates.aspx" />
     <Content Include="Admin\BrowseGroups.aspx" />
+    <Content Include="Admin\CreditsHistory.aspx" />
     <Content Include="Admin\BrowseMessages.aspx" />
     <Content Include="Admin\BrowsePhotos.aspx" />
     <Content Include="Admin\BrowseSpamSuspects.aspx" />
@@ -1096,10 +1097,12 @@
     <Content Include="ckeditor\_source\skins\v2\templates.css" />
     <Content Include="ckeditor\_source\skins\v2\toolbar.css" />
     <Content Include="ckeditor\_source\themes\default\theme.js" />
+    <Content Include="Components\Profile\CreditHistory.ascx" />
     <Content Include="Components\RegisterBox.ascx" />
     <Content Include="Components\Search\SearchBoxDropDown.ascx" />
     <Content Include="Components\SimilarProfiles.ascx" />
     <Content Include="Components\TimeInput.ascx" />
+    <Content Include="Components\WebParts\ArticlesWebPart.ascx" />
     <Content Include="favicon.ico" />
     <Content Include="Fonts\fontawesome-webfont.svg" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
@@ -1359,6 +1362,13 @@
     </Compile>
     <Compile Include="Admin\BrowseGroups.aspx.designer.cs">
       <DependentUpon>BrowseGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreditsHistory.aspx.cs">
+      <DependentUpon>CreditsHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreditsHistory.aspx.designer.cs">
+      <DependentUpon>CreditsHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\BrowseMessages.aspx.cs">
       <DependentUpon>BrowseMessages.aspx</DependentUpon>
@@ -1988,6 +1998,7 @@
     <Compile Include="Classes\ContentViews.cs" />
     <Compile Include="Classes\Crc32.cs" />
     <Compile Include="Classes\CreditsHistory.cs" />
+    <Compile Include="Classes\CreditsHistoryMessages.cs" />
     <Compile Include="Classes\CreditsPackages.cs" />
     <Compile Include="Classes\DBSettings.cs" />
     <Compile Include="Classes\Ecards.cs" />
@@ -2086,6 +2097,13 @@
       <DependentUpon>Comments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Components\BannerView.cs" />
+    <Compile Include="Components\Profile\CreditHistory.ascx.cs">
+      <DependentUpon>CreditHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Profile\CreditHistory.ascx.designer.cs">
+      <DependentUpon>CreditHistory.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\RegisterBox.ascx.cs">
       <DependentUpon>RegisterBox.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2148,6 +2166,13 @@
     </Compile>
     <Compile Include="Components\TimeInput.ascx.designer.cs">
       <DependentUpon>TimeInput.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\WebParts\ArticlesWebPart.ascx.cs">
+      <DependentUpon>ArticlesWebPart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\WebParts\ArticlesWebPart.ascx.designer.cs">
+      <DependentUpon>ArticlesWebPart.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\WideBoxEnd.ascx.cs">
       <DependentUpon>WideBoxEnd.ascx</DependentUpon>

@@ -58,6 +58,15 @@ namespace AspNetDating {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkViewPhotos;
         
         /// <summary>
+        /// lnkViewVideos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkViewVideos;
+        
+        /// <summary>
         /// pnlBlog control.
         /// </summary>
         /// <remarks>
@@ -103,15 +112,6 @@ namespace AspNetDating {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkSendMessage;
         
         /// <summary>
-        /// lnkSendToFriend control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkSendToFriend;
-        
-        /// <summary>
         /// pnlSendEcard control.
         /// </summary>
         /// <remarks>
@@ -128,6 +128,24 @@ namespace AspNetDating {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkSendEcard;
+        
+        /// <summary>
+        /// lnkSendFlowers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkSendFlowers;
+        
+        /// <summary>
+        /// lnkSendToFriend control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkSendToFriend;
         
         /// <summary>
         /// pnlAddToFavourites control.
@@ -443,7 +461,6 @@ namespace AspNetDating {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkReportAbuse;
-        
         
         /// <summary>
         /// SmallBoxEnd2 control.

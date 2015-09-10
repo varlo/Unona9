@@ -10,6 +10,7 @@
 <%@ Register Src="Components/Profile/EditPhotos.ascx" TagName="EditPhotos" TagPrefix="uc3" %>
 <%@ Register Src="Components/Profile/EditProfile.ascx" TagName="EditProfile" TagPrefix="uc2" %>
 <%@ Register Src="Components/Profile/EditSkin.ascx" TagName="EditSkin" TagPrefix="uc13" %>
+<%@ Register Src="~/Components/Profile/CreditHistory.ascx" TagName="CreditHistory" TagPrefix="uc16" %>
 <%@ Register Src="~/Components/Profile/PrivacySettings.ascx" TagName="PrivacySettings" TagPrefix="uc14" %>
 <%@ Register Src="~/Components/Profile/ViewEvents.ascx" TagName="ViewEvents" TagPrefix="uc15" %>
 <%@ Register TagPrefix="uc1" TagName="SmallBoxStart" Src="Components/SmallBoxStart.ascx" %>
@@ -28,6 +29,7 @@
                 <li id="pnlUploadVideo" runat="server"><asp:linkbutton id="lnkUploadVideo" Runat="server" onclick="lnkUploadVideo_Click" /></li>
                 <li><asp:linkbutton id="lnkViewEvents" Runat="server" onclick="lnkViewEvents_Click" /></li>
                 <li id="pnlEditSkin" runat="server"><asp:linkbutton id="lnkEditSkin" Runat="server" onclick="lnkEditSkin_Click" /></li>
+                <li><asp:linkbutton id="lnkCreditHistory" Runat="server" onclick="lnkCreditHistory_Click" /></li>
                 <li><asp:linkbutton id="lnkPrivacySettings" Runat="server" onclick="lnkPrivacySettings_Click" /></li>
                 <li><asp:linkbutton id="lnkSettings" Runat="server" onclick="lnkSettings_Click" /></li>
                 <li id="trSubscription" runat="server"><asp:linkbutton id="lnkSubscription" Runat="server" onclick="lnkSubscription_Click" /></li>
@@ -44,6 +46,7 @@
         <uc10:UploadVideo ID="UploadVideo1" runat="server" />
         <uc6:Billing ID="Billing1" runat="server" />
         <uc13:EditSkin ID="EditSkin1" runat="server" />
+        <uc16:CreditHistory ID="CreditHistory1" runat="server" />
         <uc14:PrivacySettings ID="PrivacySettings1" runat="server" />
         <uc15:ViewEvents ID="ViewEvents1" runat="server" />
 	</article>
