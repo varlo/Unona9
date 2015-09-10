@@ -88,6 +88,9 @@ namespace AspNetDating.Classes
             [Reflection.DescriptionAttribute("Browse Messages")]
             public eAccess browseMessages = eAccess.None;
 
+            [Reflection.DescriptionAttribute("Browse CreditHistory")]
+            public eAccess browseCreditHistory = eAccess.None;
+
             [Reflection.DescriptionAttribute("Edit Texts")]
             public eAccess editTexts = eAccess.None;
 

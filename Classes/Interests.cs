@@ -11,7 +11,6 @@
  * This notice may not be removed from the source code. 
  */
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Microsoft.ApplicationBlocks.Data;
@@ -90,49 +89,69 @@ namespace AspNetDating.Classes
         /// <param name="fromUsername">From username.</param>
         /// <param name="toUsername">To username.</param>
         /// <returns></returns>
-//        public static bool Send(string fromUsername, string toUsername)
-//        {
-//            eStatus status;
-//            using (SqlConnection conn = Config.DB.Open())
-//            {
-//                status = (eStatus) SqlHelper.ExecuteScalar(conn,
-//                                                           "SendInterest", fromUsername, toUsername);
-//            }
-//
-//            switch (status)
-//            {
-//                case eStatus.Sent:
-//                    User targetUser;
-//                    try
-//                    {
-//                         targetUser = User.Load(toUsername);
-//                     }
-//                     catch (NotFoundException) { throw; }
-//                    
-//                    if (targetUser.ReceiveEmails)
-//                    {
-//                        MiscTemplates.ShowInterestMessage showInterestMessageTemplate =
-//                            new MiscTemplates.ShowInterestMessage(targetUser.LanguageId);
-//                        string subject = showInterestMessageTemplate.Subject;
-//                        string body = showInterestMessageTemplate.Message.Replace("%%USER%%", fromUsername);
-//                        try
-//                        {
-//                            Email.Send(Config.Misc.SiteEmail, targetUser.Email, subject, body, false);
-//                            //Message.Send(Config.Users.SystemUsername,toUsername,body,0);
-//                        }
-//                        catch (Exception ex)
-//                        {
-//                            ExceptionLogger.Log("Interests.Send", ex);
-//                        }
-//                    }
-//                    return true;
-//                case eStatus.Updated:
-//                    return true;
-//                case eStatus.AlreadySent:
-//                default:
-//                    return false;
-//            }
-//        }
+        public static bool Send(string fromUsername, string toUsername)
+        {
+            eStatus status;
+            using (SqlConnection conn = Config.DB.Open())
+            {
+                status = (eStatus)SqlHelper.ExecuteScalar(conn, "SendInterest", fromUsername, toUsername);
+            }
+
+            switch (status)
+            {
+                case eStatus.Sent:
+                    User senderUser = User.Load(fromUsername);
+                    User targetUser = User.Load(toUsername);
+
+                    if (targetUser.ReceiveEmails)
+                    {
+                        //                        MiscTemplates.ShowInterestMessage showInterestMessageTemplate =
+                        //                            new MiscTemplates.ShowInterestMessage(targetUser.LanguageId);
+                        //                        string subject = showInterestMessageTemplate.Subject;
+                        //                        string user_sender_image = ImageHandler.RenderImageTagUsername(senderUser.Username, 150, 150, null, false, true, true);
+                        //                        string body = showInterestMessageTemplate.Message.Replace("%%IMAGE_SENDER%%", user_sender_image);
+                        //                        body = body.Replace("%%USER%%", fromUsername);
+
+                        var showInterest = new EmailTemplates.ShowInterest(targetUser.LanguageId);
+                        string user_sender_image = ImageHandler.RenderImageTagUsername(senderUser.Username, 150, 150, null, false, true, true);
+
+                        try
+                        {
+                            Email.Send(Config.Misc.SiteTitle, Config.Misc.SiteEmail, targetUser.Username, targetUser.Email,
+                                       showInterest.GetFormattedSubject(senderUser.Username),
+                                       showInterest.GetFormattedBody(targetUser.Username, senderUser.Username, user_sender_image), false);
+                            //Email.Send(Config.Misc.SiteEmail, targetUser.Email, subject, body, false);
+                            //Message.Send(Config.Users.SystemUsername,toUsername,body,0);
+                        }
+                        catch (Exception ex)
+                        {
+                            ExceptionLogger.Log("Interests.Send", ex);
+                        }
+                    }
+                    if (Config.Users.NewEventNotification)
+                    {
+                        int imageID;
+                        try
+                        {
+                            imageID = Photo.GetPrimary(senderUser.Username).Id;
+                        }
+                        catch (NotFoundException)
+                        {
+                            imageID = ImageHandler.GetPhotoIdByGender(senderUser.Gender);
+                        }
+                        string text = "You got a smile at Unona.net!".Translate();
+
+                        string thumbnailUrl = ImageHandler.CreateImageUrl(imageID, 50, 50, false, true, true);
+                        User.SendOnlineEventNotification(senderUser.Username, targetUser.Username, text, thumbnailUrl, "Mailbox.aspx?sel=sentint");
+                    }
+
+                    return true;
+                case eStatus.Updated:
+                    return true;
+                default:
+                    return false;
+            }
+        }
 
         /// <summary>
         /// Fetches the specified id.

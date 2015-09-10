@@ -1138,6 +1138,18 @@ namespace AspNetDating.Classes
             set { credits = value; }
         }
 
+        private string owner;
+
+        /// <summary>
+        /// Gets or sets the owner.
+        /// </summary>
+        /// <value>The owner.</value>
+        public string Owner
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
+
         private int moderationScores = 0;
 
         public int ModerationScores

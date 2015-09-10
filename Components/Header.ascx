@@ -42,6 +42,7 @@
                         <li id="liFriends" runat="server"><a href="Friends.aspx"><%= Lang.Trans("Friends") %></a></li>
                         <li class="divider"></li>
                         <li><a href="Profile.aspx?sel=set"><%= Lang.Trans("Settings") %></a></li>
+                        <li><a href="Profile.aspx?sel=credits"><%= Lang.Trans("Credits History") %></a></li>
                         <li><a href="Profile.aspx?sel=privacy"><%= Lang.Trans("Privacy Settings") %></a></li>
                         <li id="liSubscription" runat="server"><a href="Profile.aspx?sel=payment"><%= Lang.Trans("Billing") %></a></li>
                         <li class="divider"></li>

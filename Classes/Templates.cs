@@ -13,6 +13,7 @@
 using System;
 using System.Collections;
 using System.Web.UI.WebControls;
+using AspNetDating.Components.Groups;
 
 namespace AspNetDating.Classes
 {
@@ -884,6 +885,70 @@ namespace AspNetDating.Classes
             public string GetFormattedSubject(string senderUsername)
             {
                 return Subject.Replace("%%USER%%", senderUsername);
+            }
+        }
+
+        [Reflection.Description("Show interest message")]
+        public class ShowInterest : IEmailTemplate
+        {
+            public ShowInterest() { }
+            public ShowInterest(int languageId) { _languageId = languageId; }
+
+            private int _languageId = Config.Misc.DefaultLanguageId;
+            public int LanguageId
+            {
+                get { return _languageId; }
+                set { _languageId = value; }
+            }
+
+            private const string DefaultSubject = "You got a smile from %%SENDER%%";
+
+            private readonly string _defaultBody = String.Format(SendAnnouncement.EMAIL_TEMPLATE, "<a href=\"" + Config.Urls.Home + "/ShowUser.aspx?uid=%%SENDER%%\">%%IMAGE_SENDER%%</a><br/>\r\n"
+                + "<a href=\"" + Config.Urls.Home + "/ShowUser.aspx?uid=%%SENDER%%\">%%SENDER%%</a> is sending a smile to you!<br/>"
+                + "<p>Please "
+                + "<a href=\"" + Config.Urls.Home + "\">" + "log in" + "</a>"
+                + " to your account to check the profile. Keep the interest going by sending a smile or even better - send a kind message to get a relationship started.<br>\r\n"
+                + " Do not procrastinate, your dream might be just a click away. Remember - She is Waiting for You. Greetings,<br/>\r\n"
+                + "Unona Dating Customer Support</p>");
+
+            [Reflection.Description("Email subject")]
+            [Reflection.Property("TextMode", TextBoxMode.SingleLine)]
+            [Reflection.Property("CssClass", "tsingleline")]
+            public string Subject
+            {
+                get { return DBSettings.Get("ShowInterest_Subject_" + LanguageId, DefaultSubject); }
+                set { DBSettings.Set("ShowInterest_Subject_" + LanguageId, value); }
+            }
+
+            [Reflection.Description("Email body")]
+            [Reflection.Control(typeof(HtmlEditor), "Value")]
+
+            public string Body
+            {
+                get { return String.Format(SendAnnouncement.EMAIL_TEMPLATE, DBSettings.Get("ShowInterest_Body_" + LanguageId, _defaultBody)); }
+                set { DBSettings.Set("ShowInterest_Body_" + LanguageId, value); }
+            }
+
+            [Reflection.Description("N/A")]
+            public string Description
+            {
+                get { return Lang.Trans("Description: Use %%RECIPIENT%% where you want to put the first and the last name of the recipient"); }
+            }
+
+            public string GetFormattedBody(string recipientUsername, string senderUsername, string senderImage)
+            {
+                string formattedBody = Body;
+
+                formattedBody = formattedBody.Replace("%%IMAGE_SENDER%%", senderImage);
+                formattedBody = formattedBody.Replace("%%RECIPIENT%%", recipientUsername);
+                formattedBody = formattedBody.Replace("%%SENDER%%", senderUsername);
+
+                return formattedBody;
+            }
+
+            public string GetFormattedSubject(string senderUsername)
+            {
+                return Subject.Replace("%%SENDER%%", senderUsername);
             }
         }
     }
