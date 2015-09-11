@@ -75,9 +75,6 @@
     <Setting Name="CheckAlternativePhotoStorage" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MySpace_Secret" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">447034021d28403eaeec9b9509d8fb7b</Value>
-    </Setting>
     <Setting Name="UserImagesDirectory" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
@@ -99,7 +96,10 @@
     <Setting Name="PaymentProcessors" Type="System.Collections.Specialized.StringCollection" Scope="Application">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;AlertPay&lt;/string&gt;
   &lt;string&gt;PayPal&lt;/string&gt;
+  &lt;string&gt;CCBill&lt;/string&gt;
+  &lt;string&gt;Check&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="TwitterConsumerKey" Type="System.String" Scope="Application">
@@ -107,9 +107,6 @@
     </Setting>
     <Setting Name="TwitterConsumerSecret" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="HomeURL" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost/AspNetDating8</Value>
     </Setting>
     <Setting Name="DefaultCountry" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
@@ -127,9 +124,6 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AuthorizeNetTranKey" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="Facebook_API_Key" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Facebook_Secret_Key" Type="System.String" Scope="Application">
@@ -150,13 +144,22 @@
     <Setting Name="CCBillSecretKey" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ChatHomeURL" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost/AspNetDating8/AjaxChat</Value>
-    </Setting>
     <Setting Name="GetCountriesFromExternalService" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="CountriesServiceURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HomeURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost/AspNetDating9</Value>
+    </Setting>
+    <Setting Name="Facebook_API_Key" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1505229719747199</Value>
+    </Setting>
+    <Setting Name="MySpace_Secret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ChatHomeURL" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

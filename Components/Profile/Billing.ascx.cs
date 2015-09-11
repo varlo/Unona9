@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
 using System.IO;
@@ -48,6 +47,7 @@ namespace AspNetDating.Components.Profile
 
             // Do not move to PageLoad!
             PrepareInterface();
+            LoadStrings();
         }
 
         private void PrepareInterface()
@@ -71,13 +71,13 @@ namespace AspNetDating.Components.Profile
 
             var supportsCredits = false;
             var supportsSubscriptions = billingplans.Length > 0;
-            
+
             foreach (var option in options)
             {
-                var optionsAllowCredits = from o in typeof (BillingPlanOptions).GetProperties()
+                var optionsAllowCredits = from o in typeof(BillingPlanOptions).GetProperties()
                                           where o.PropertyType.IsGenericType &&
                                                 o.PropertyType.GetGenericTypeDefinition() ==
-                                                typeof (BillingPlanOption<>)
+                                                typeof(BillingPlanOption<>)
                                           select o.GetValue(option, null).GetType()
                                               .GetField("EnableCreditsPayment").GetValue(o.GetValue(option, null));
                 if (optionsAllowCredits.Any(o => (bool)o))
@@ -93,12 +93,12 @@ namespace AspNetDating.Components.Profile
                     "There are no billing plans or credit packages configured!".Translate();
                 Response.Redirect("ShowStatus.aspx");
             }
-            
+
             if (!supportsCredits)
             {
                 radioSubscription.Checked = true;
                 divPaymentType.Visible = false;
-                
+
                 if (radiolistPaymentMethods.Items.Count == 0)
                     radioPaymentType_CheckedChanged(null, null);
             }
@@ -117,7 +117,7 @@ namespace AspNetDating.Components.Profile
 
             if (Session["BillingPlanOption"] is BillingPlanOption<bool>)
             {
-                var option = (BillingPlanOption<bool>) Session["BillingPlanOption"];
+                var option = (BillingPlanOption<bool>)Session["BillingPlanOption"];
                 Session["BillingPlanOption"] = null;
 
                 string upgradeMessage;
@@ -169,6 +169,82 @@ namespace AspNetDating.Components.Profile
             #endregion
         }
 
+        private void LoadStrings()
+        {
+            if (radiolistPaymentMethods.Items.Count == 0)
+            {
+                foreach (string paymentProcessor in Config.AdminSettings.Payments.PaymentProcessors)
+                {
+                    if (paymentProcessor == "PayPal")
+                    {
+                        radiolistPaymentMethods.Items.Add(Lang.Trans("PayPal"));
+                        continue;
+                    }
+                    if (paymentProcessor == "AlertPay" && User.Username == "vchizh")
+                    {
+                        radiolistPaymentMethods.Items.Add(Lang.Trans("AlertPay"));
+                        continue;
+                    }
+                    if (paymentProcessor == "CCBill")
+                    {
+                        radiolistPaymentMethods.Items.Add(Lang.Trans("Visa"));
+                        continue;
+                    }
+                    if (paymentProcessor != "AlertPay" && paymentProcessor != "CCBill")
+                        radiolistPaymentMethods.Items.Add(paymentProcessor);
+                }
+            }
+
+            LoadBuyCreditsStrings();
+        }
+
+        private void LoadBuyCreditsStrings()
+        {
+            decimal minPrice = 0;
+            decimal maxPrice = 0;
+
+            LargeBoxStart.Title = Lang.Trans("Purchase Credits");
+            hlPaymentMethods.Title = Lang.Trans("Payment Details");
+
+            switch (radiolistPaymentMethods.SelectedValue)
+            {
+                case "Visa":
+                    minPrice = 0;
+                    maxPrice = 200;
+                    break;
+                case "PayPal":
+                    minPrice = 0;
+                    maxPrice = 500;
+                    break;
+                case "AlertPay":
+                    minPrice = 0;
+                    maxPrice = 0;
+                    break;
+                case "PayflowPro":
+                case "Authorize.NET":
+                    minPrice = 0;
+                    maxPrice = 0;
+                    break;
+                case "Check":
+                    minPrice = 200;
+                    maxPrice = 10000;
+                    break;
+            }
+
+            CreditsPackage[] packages = CreditsPackage.Fetch(CreditsPackage.eSortColumn.Price);
+
+            rlPlans.Items.Clear();
+            foreach (CreditsPackage package in packages)
+            {
+                //                if (package.Price >= minPrice && package.Price < maxPrice)
+                if (package.Quantity >= minPrice && package.Quantity < maxPrice)
+                    rlPlans.Items.Add(
+                            new ListItem(
+                                String.Format("{0}({1} {2}) - {3}", package.Name.Translate(), package.Quantity, "credits".Translate(),
+                                package.Price.ToString("c")), package.ID.ToString()));
+            }
+        }
+
         protected void radioPaymentType_CheckedChanged(object sender, EventArgs e)
         {
             if (radioSubscription.Checked)
@@ -215,7 +291,7 @@ namespace AspNetDating.Components.Profile
                         lblCurrentPlan.Text += "<BR>" + Lang.Trans("Your subscription expires on: ") +
                                               activeSubscription.RenewDate.ToShortDateString();
                     }
-                    else 
+                    else
                     {
                         if (ActiveSubscription.PaymentProcessor != "Check")
                         {
@@ -257,7 +333,7 @@ namespace AspNetDating.Components.Profile
             radiolistPaymentMethods.Items.Clear();
             foreach (string paymentProcessor in Config.AdminSettings.Payments.PaymentProcessors)
             {
-                if (radioSubscription.Checked && ActiveSubscription != null && 
+                if (radioSubscription.Checked && ActiveSubscription != null &&
                     ActiveSubscription.PaymentProcessor != paymentProcessor) continue;
 
                 radiolistPaymentMethods.Items.Add(
@@ -321,6 +397,8 @@ namespace AspNetDating.Components.Profile
                     break;
                 case "Check":
                     divCheckPayment.Visible = true;
+                    var payByCheckTemplate = new MiscTemplates.PayByCheck();
+                    cvCheckPayment.Text = payByCheckTemplate.Text;
                     break;
             }
         }
@@ -369,6 +447,14 @@ namespace AspNetDating.Components.Profile
 
         private void RedirectToCCBill()
         {
+            if (rlPlans.SelectedItem == null)
+            {
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "errorAlert",
+                                                            String.Format("<script>alert('{0}');</script>",
+                                                                          "Please select your billing plan!".Translate()));
+                return;
+            }
+
             string formHtml = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">" +
                     "<html><head><title>Payment</title></head>" +
                     "<body onload=\"PaymentForm.submit();\">" +
@@ -492,6 +578,14 @@ namespace AspNetDating.Components.Profile
 
         private void RedirectToAlertPay()
         {
+            if (rlPlans.SelectedItem == null)
+            {
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "errorAlert",
+                                                            String.Format("<script>alert('{0}');</script>",
+                                                                          "Please select your billing plan!".Translate()));
+                return;
+            }
+
             var html = String.Empty;
 
             if (radioSubscription.Checked)
@@ -691,7 +785,7 @@ namespace AspNetDating.Components.Profile
                 BillingPlan plan = BillingPlan.Fetch(planID);
                 if (plan == null)
                 {
-                    Page.ClientScript.RegisterClientScriptBlock(typeof (Page), "errorAlert",
+                    Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "errorAlert",
                                                                 String.Format("<script>alert('{0}');</script>",
                                                                               "Selected billing plan is not in the database"));
                     return;
@@ -715,13 +809,13 @@ namespace AspNetDating.Components.Profile
                         Response.Redirect("ThankYou.aspx");
                         return;
                     case eGatewayResponse.Declined:
-                        Page.ClientScript.RegisterClientScriptBlock(typeof (Page), "errorAlert",
+                        Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "errorAlert",
                                                                     String.Format("<script>alert('{0}');</script>",
                                                                                   Lang.Trans(
                                                                                       "Your credit card has been declined!")));
                         return;
                     case eGatewayResponse.Error:
-                        Page.ClientScript.RegisterClientScriptBlock(typeof (Page), "errorAlert",
+                        Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "errorAlert",
                                                                     String.Format("<script>alert('{0}');</script>",
                                                                                   Lang.Trans(
                                                                                       "There has been an error while processing your transaction!")));
