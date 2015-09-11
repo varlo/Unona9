@@ -233,16 +233,16 @@ namespace AspNetDating.Components.Profile
 
             CreditsPackage[] packages = CreditsPackage.Fetch(CreditsPackage.eSortColumn.Price);
 
-            rlPlans.Items.Clear();
-            foreach (CreditsPackage package in packages)
-            {
-                //                if (package.Price >= minPrice && package.Price < maxPrice)
-                if (package.Quantity >= minPrice && package.Quantity < maxPrice)
-                    rlPlans.Items.Add(
-                            new ListItem(
-                                String.Format("{0}({1} {2}) - {3}", package.Name.Translate(), package.Quantity, "credits".Translate(),
-                                package.Price.ToString("c")), package.ID.ToString()));
-            }
+            //rlPlans.Items.Clear();
+            //foreach (CreditsPackage package in packages)
+            //{
+            //    //                if (package.Price >= minPrice && package.Price < maxPrice)
+            //    if (package.Quantity >= minPrice && package.Quantity < maxPrice)
+            //        rlPlans.Items.Add(
+            //                new ListItem(
+            //                    String.Format("{0}({1} {2}) - {3}", package.Name.Translate(), package.Quantity, "credits".Translate(),
+            //                    package.Price.ToString("c")), package.ID.ToString()));
+            //}
         }
 
         protected void radioPaymentType_CheckedChanged(object sender, EventArgs e)
