@@ -276,21 +276,6 @@ namespace AspNetDating.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <string>AlertPay</string>
-  <string>PayPal</string>
-  <string>CCBill</string>
-  <string>Check</string>
-</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection PaymentProcessors {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["PaymentProcessors"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string TwitterConsumerKey {
             get {
@@ -466,6 +451,18 @@ namespace AspNetDating.Properties {
         public string ChatHomeURL {
             get {
                 return ((string)(this["ChatHomeURL"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>PayPal</string>\r\n  <string>CCBill</string>\r\n  <string>Check</string>\r\n</Ar" +
+            "rayOfString>")]
+        public global::System.Collections.Specialized.StringCollection PaymentProcessors {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["PaymentProcessors"]));
             }
         }
     }

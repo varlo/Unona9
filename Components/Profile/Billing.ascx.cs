@@ -99,7 +99,7 @@ namespace AspNetDating.Components.Profile
                 radioSubscription.Checked = true;
                 divPaymentType.Visible = false;
 
-                if (radiolistPaymentMethods.Items.Count == 0)
+                if (ddPaymentProcessors.Items.Count == 0)
                     radioPaymentType_CheckedChanged(null, null);
             }
             else if (!supportsSubscriptions)
@@ -107,7 +107,7 @@ namespace AspNetDating.Components.Profile
                 radioCredits.Checked = true;
                 divPaymentType.Visible = false;
 
-                if (radiolistPaymentMethods.Items.Count == 0)
+                if (ddPaymentProcessors.Items.Count == 0)
                     radioPaymentType_CheckedChanged(null, null);
             }
 
@@ -171,27 +171,27 @@ namespace AspNetDating.Components.Profile
 
         private void LoadStrings()
         {
-            if (radiolistPaymentMethods.Items.Count == 0)
+            if (ddPaymentProcessors.Items.Count == 0)
             {
                 foreach (string paymentProcessor in Config.AdminSettings.Payments.PaymentProcessors)
                 {
                     if (paymentProcessor == "PayPal")
                     {
-                        radiolistPaymentMethods.Items.Add(Lang.Trans("PayPal"));
+                        ddPaymentProcessors.Items.Add(Lang.Trans("PayPal"));
                         continue;
                     }
                     if (paymentProcessor == "AlertPay" && User.Username == "vchizh")
                     {
-                        radiolistPaymentMethods.Items.Add(Lang.Trans("AlertPay"));
+                        ddPaymentProcessors.Items.Add(Lang.Trans("AlertPay"));
                         continue;
                     }
                     if (paymentProcessor == "CCBill")
                     {
-                        radiolistPaymentMethods.Items.Add(Lang.Trans("Visa"));
+                        ddPaymentProcessors.Items.Add(Lang.Trans("Visa"));
                         continue;
                     }
                     if (paymentProcessor != "AlertPay" && paymentProcessor != "CCBill")
-                        radiolistPaymentMethods.Items.Add(paymentProcessor);
+                        ddPaymentProcessors.Items.Add(paymentProcessor);
                 }
             }
 
@@ -200,38 +200,38 @@ namespace AspNetDating.Components.Profile
 
         private void LoadBuyCreditsStrings()
         {
-            decimal minPrice = 0;
-            decimal maxPrice = 0;
+            //decimal minPrice = 0;
+            //decimal maxPrice = 0;
 
             LargeBoxStart.Title = Lang.Trans("Purchase Credits");
-            hlPaymentMethods.Title = Lang.Trans("Payment Details");
+            //hlPaymentMethods.Title = Lang.Trans("Payment Details");
 
-            switch (radiolistPaymentMethods.SelectedValue)
-            {
-                case "Visa":
-                    minPrice = 0;
-                    maxPrice = 200;
-                    break;
-                case "PayPal":
-                    minPrice = 0;
-                    maxPrice = 500;
-                    break;
-                case "AlertPay":
-                    minPrice = 0;
-                    maxPrice = 0;
-                    break;
-                case "PayflowPro":
-                case "Authorize.NET":
-                    minPrice = 0;
-                    maxPrice = 0;
-                    break;
-                case "Check":
-                    minPrice = 200;
-                    maxPrice = 10000;
-                    break;
-            }
+            //switch (ddPaymentProcessors.SelectedValue)
+            //{
+            //    case "Visa":
+            //        minPrice = 0;
+            //        maxPrice = 200;
+            //        break;
+            //    case "PayPal":
+            //        minPrice = 0;
+            //        maxPrice = 500;
+            //        break;
+            //    case "AlertPay":
+            //        minPrice = 0;
+            //        maxPrice = 0;
+            //        break;
+            //    case "PayflowPro":
+            //    case "Authorize.NET":
+            //        minPrice = 0;
+            //        maxPrice = 0;
+            //        break;
+            //    case "Check":
+            //        minPrice = 200;
+            //        maxPrice = 10000;
+            //        break;
+            //}
 
-            CreditsPackage[] packages = CreditsPackage.Fetch(CreditsPackage.eSortColumn.Price);
+            //CreditsPackage[] packages = CreditsPackage.Fetch(CreditsPackage.eSortColumn.Price);
 
             //rlPlans.Items.Clear();
             //foreach (CreditsPackage package in packages)
@@ -330,15 +330,16 @@ namespace AspNetDating.Components.Profile
             }
 
             divPaymentMethods.Visible = true;
-            radiolistPaymentMethods.Items.Clear();
+            ddPaymentProcessors.Items.Clear();
             foreach (string paymentProcessor in Config.AdminSettings.Payments.PaymentProcessors)
             {
                 if (radioSubscription.Checked && ActiveSubscription != null &&
                     ActiveSubscription.PaymentProcessor != paymentProcessor) continue;
 
-                radiolistPaymentMethods.Items.Add(
-                    new ListItem(String.Format("<img src=\"images/{0}.jpg\" alt=\"{0}\" title=\"{0}\">",
-                                               paymentProcessor), paymentProcessor));
+                //ddPaymentProcessors.Items.Add(
+                //    new ListItem(String.Format("<img src=\"images/{0}.jpg\" alt=\"{0}\" title=\"{0}\">",
+                //                               paymentProcessor), paymentProcessor));
+                ddPaymentProcessors.Items.Add(new ListItem(paymentProcessor == "CCBill" ? "Credit card" : paymentProcessor, paymentProcessor));
             }
 
             //if already subscribed for PayPal remove all the plans (leave only the "keep current plan" and cancelation options)
@@ -354,20 +355,20 @@ namespace AspNetDating.Components.Profile
                 }
             }
 
-            if (radiolistPaymentMethods.Items.Count == 1)
+            if (ddPaymentProcessors.Items.Count == 1)
             {
-                radiolistPaymentMethods.SelectedIndex = 0;
-                radiolistPaymentMethods_SelectedIndexChanged(null, null);
+                ddPaymentProcessors.SelectedIndex = 0;
+                ddPaymentProcessors_SelectedIndexChanged(null, null);
             }
         }
 
-        protected void radiolistPaymentMethods_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddPaymentProcessors_SelectedIndexChanged(object sender, EventArgs e)
         {
             divOutsidePayment.Visible = false;
             divCreditCardPayment.Visible = false;
             divCheckPayment.Visible = false;
 
-            switch (radiolistPaymentMethods.SelectedValue)
+            switch (ddPaymentProcessors.SelectedValue)
             {
                 case "CCBill":
                     divOutsidePayment.Visible = true;
@@ -428,7 +429,7 @@ namespace AspNetDating.Components.Profile
             if (rlPlans.SelectedValue == "-1")
                 return;
 
-            switch (radiolistPaymentMethods.SelectedValue)
+            switch (ddPaymentProcessors.SelectedValue)
             {
                 case "CCBill":
                     RedirectToCCBill();
@@ -670,7 +671,7 @@ namespace AspNetDating.Components.Profile
 
         protected void btnCreditCardPayment_Click(object sender, EventArgs e)
         {
-            switch (radiolistPaymentMethods.SelectedValue)
+            switch (ddPaymentProcessors.SelectedValue)
             {
                 case "Authorize.NET":
                     ProcessPaymentThroughPaymentGateway(new AuthorizeNet());
@@ -772,7 +773,7 @@ namespace AspNetDating.Components.Profile
                     }
 
                     ActiveSubscription.PlanID = planID;
-                    ActiveSubscription.PaymentProcessor = radiolistPaymentMethods.SelectedValue;
+                    ActiveSubscription.PaymentProcessor = ddPaymentProcessors.SelectedValue;
                     ActiveSubscription.Update();
 
                     ((PageBase)Page).CurrentUserSession.BillingPlanOptions = null;

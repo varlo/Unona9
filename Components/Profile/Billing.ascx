@@ -48,9 +48,8 @@
 </div>
 <div id="divPaymentMethods" visible="false" runat="server">
     <uc1:HeaderLine ID="hlPaymentMethods" runat="server"></uc1:HeaderLine>
-    <asp:RadioButtonList ID="radiolistPaymentMethods" Width="100%" RepeatColumns="3" RepeatLayout="Table"
-        AutoPostBack="true" OnSelectedIndexChanged="radiolistPaymentMethods_SelectedIndexChanged"  CssClass="PaymentMethodsWrap"
-        runat="server" CellPadding="0" CellSpacing="0" />
+    <asp:DropDownList id="ddPaymentProcessors" CssClass="dropdown" runat="server" AutoPostBack="True" 
+        OnSelectedIndexChanged="ddPaymentProcessors_SelectedIndexChanged"></asp:DropDownList>
 </div>
 <div class="separator">
 </div>

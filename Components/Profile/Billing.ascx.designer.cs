@@ -175,13 +175,13 @@ namespace AspNetDating.Components.Profile {
         protected global::AspNetDating.Components.HeaderLine hlPaymentMethods;
         
         /// <summary>
-        /// radiolistPaymentMethods control.
+        /// ddPaymentProcessors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList radiolistPaymentMethods;
+        protected global::System.Web.UI.WebControls.DropDownList ddPaymentProcessors;
         
         /// <summary>
         /// divOutsidePayment control.
