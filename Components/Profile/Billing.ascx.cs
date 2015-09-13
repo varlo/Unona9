@@ -314,7 +314,7 @@ namespace AspNetDating.Components.Profile
                 CreditsPackage[] creditsPackages = CreditsPackage.Fetch();
 
                 rlCreditPackages.Items.Clear();
-                foreach (CreditsPackage package in creditsPackages)
+                foreach (CreditsPackage package in creditsPackages.OrderBy(cp => cp.Quantity))
                 {
                     rlCreditPackages.Items.Add(
                         new ListItem(String.Format("{0} - {1} credits for {2}".Translate(),
