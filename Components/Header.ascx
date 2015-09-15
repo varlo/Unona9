@@ -72,6 +72,9 @@
                     <li id="liSearch" runat="server">
                         <a href="<%= Config.BackwardCompatibility.UseClassicSearchPage ? "Search.aspx" : "Search2.aspx" %>"><%= Lang.Trans("Search") %></a>
                     </li>
+                    <li id="liTopFavorites" runat="server">
+                        <a href="Favorites.aspx"><%= Lang.Trans("Favorites") %></a>
+                    </li>
                     <li id="liGroups" runat="server">
                         <a href="Groups.aspx"><%= Lang.Trans("Groups") %></a>
                     </li>
