@@ -298,11 +298,11 @@ namespace AspNetDating.Classes
             }
         }
 
-        public static int[] Search(string username)
+        public static int[] Search(string username, string service = null)
         {
             using (SqlConnection conn = Config.DB.Open())
             {
-                SqlDataReader reader = SqlHelper.ExecuteReader(conn, "SearchCreditsHistoryByUsername", username);
+                SqlDataReader reader = SqlHelper.ExecuteReader(conn, "SearchCreditsHistoryByUsername", username, service);
                 var lCreditsHistoryIds = new List<int>();
                 while (reader.Read())
                     lCreditsHistoryIds.Add((int)reader["Id"]);
